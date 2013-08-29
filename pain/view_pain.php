@@ -29,9 +29,10 @@ echo "<li><label>What causes pain increas?</label>" . $row['WhatIncreasesPain'] 
 echo "<li><label>Indicate if pain affects</label>" . $row['PainAffectsSleep'] . "</li>";
 echo "<li><label>Further comments about the pain</label>" . $row['Comments'] . "</li>";
 echo "<li><label>Plan</label>" . $row['MedicationPlan'] . "</li>";
-
+echo "<button type=\"button\" onclick=\"location='../view_pain_management.php?PatientID="
+  . $row['PatientID'] . "'\">View Pain Management</button>";
 ?>
-<button type="button" onclick="location='../view_pain_management.php'">View Pain Management</button>
+
 </ul>
 </div>
 </body>

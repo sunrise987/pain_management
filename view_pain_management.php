@@ -1,27 +1,32 @@
 <html>
   <head>
     <link href="style.css" rel="stylesheet" type="text/css">
-    <h2>Pain Management for ...</h2>
-  </head>
-  <body>
-    <div class="CSSTableGenerator">
-      <table>
-        <tr>
-          <td class="delete"></td>
-          <td class="datetime">Date/Time</td>
-          <td class="lop">Location of Pain</td>
-          <td class="top">Type of Pain</td>
-          <td class="intensity">Intensity</td>
-          <td class="opioids">Opioids</td>
-        </tr>
-
 <?php
-$con=mysqli_connect("localhost", "php_app", "admin000",
-  "patient_management");
+$con=mysqli_connect("localhost", "php_app", "admin000", "patient_management");
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-$result = mysqli_query($con, "SELECT LocationOfPain, Opioids FROM Medicine join Pain");
+
+$id = $_GET['PatientID'];
+$array = mysqli_query($con, "select Name from Patient where PatientID = $id");
+$row = mysqli_fetch_array($array);
+
+echo "
+    <h2>Pain Management for " . $row['Name'] . "</h2>
+  </head>
+  <body>
+    <div class=\"CSSTableGenerator\">
+      <table>
+        <tr>
+          <td class=\"delete\"></td>
+          <td class=\"datetime\">Date/Time</td>
+          <td class=\"lop\">Location of Pain</td>
+          <td class=\"top\">Type of Pain</td>
+          <td class=\"intensity\">Intensity</td>
+          <td class=\"opioids\">Opioids</td>
+        </tr>";
+
+$result = mysqli_query($con, "SELECT LocationOfPain, Opioids FROM Medicine join Pain where PatientID = $id");
 while ($row = mysqli_fetch_array($result)) {
   echo "<tr><td>X</td>";
   echo "<td>" . $row['LocationOfPain'] . "</td>";

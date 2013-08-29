@@ -37,13 +37,14 @@
           <label>Other</label><input type="text" name="other">
         </li>
 
-        <li><label>Radiation</label><input type="text" name="radiation"></li>
+
         <li><label>Type Of Pain</label><select name="tp">
             <option>Somatic</option>
             <option>Visceral</option>
             <option>Neuropathic</option>
             <option>Mixed</option>
           </select>
+          <input type="checkbox" name="radiation[]" value="1">Radiation
         </li>
         <li><label>What relieves the pain?</label><input type="text" name="relieve"></li>
         <li><label>What causes pain to increase?</label><input type="text" name="cause"></li>
@@ -54,13 +55,17 @@
             <input type="checkbox" name="effects[]" value="nutrition" /> Nutrition
             <input type="checkbox" name="effects[]" value="social" /> Social Interaction
         </li>
+
         <li>
           <label>Further comments about the pain</label>
           <input type="text" name="comments">
         </li>
         <li><label>Plan</label><input type="text" name="plan"></li>
         <li>
-          <input type="submit"><input type="hidden" name="PainID">
+          <?php
+          echo "<input type=\"hidden\" name=\"PatientID\" value=\"" . $_GET['PatientID']              . "\">";
+          ?>
+          <input type="submit">
         </li>
       </ul>
 

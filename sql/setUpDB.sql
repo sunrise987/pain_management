@@ -3,7 +3,7 @@ create database patient_management;
 use patient_management;
 
 CREATE TABLE Patient (
-  PatientID INT AUTO_INCREMENT PRIMARY KEY,
+  PatientID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   Name VARCHAR(30),
   DateOfBirth DATE,
   Gender ENUM ('male', 'female'),
@@ -15,14 +15,15 @@ CREATE TABLE Patient (
 );
 
 CREATE TABLE Pain (
-  PainID INT AUTO_INCREMENT PRIMARY KEY,
+  PainID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  PatientID INT,
   LocationOfPain TINYTEXT,
   Pattern ENUM  ('Constant', 'Intermittent'),
   Intensity TINYINT,
   AtThisMoment ENUM ('Worse', 'Best'),
   CharacterOfPain ENUM ('Shooting', 'Pricking', 'Throbbing', 'Aching', 'Pulling', 'Dull', 'Burning', 'Sharp'),
   CharacterOther TINYTEXT,
-  Radiation TEXT,
+  Radiation BIT,
   TypeOfPain ENUM ('Somatic', 'Visceral', 'Neuropathic', 'Mixed'),
   Mixed TINYTEXT,
   WhatRelievesPain TINYTEXT,
@@ -33,12 +34,12 @@ CREATE TABLE Pain (
   PainAffectsNutrition BIT,
   PainAffectsSocialInteraction BIT,
   Comments TEXT,
-  MedicationPlan TEXT
+  MedicationPlan TEXT,
+  FOREIGN KEY (PatientID) REFERENCES Patient(PatientID)
 );
 
 CREATE TABLE Medicine (
   TreatementID INT AUTO_INCREMENT PRIMARY KEY,
-  PatientID INT,
   PainID INT,
   DateTime DATETIME,
   Opioids TINYTEXT,
@@ -47,6 +48,7 @@ CREATE TABLE Medicine (
   RouteOfAddmission TINYTEXT,
   SideEffects TEXT,
   Comments TEXT,
-  FOREIGN KEY (PatientID) REFERENCES Patient(PatientID),
   FOREIGN KEY (PainID) REFERENCES Pain(PainID)
 );
+
+-- Patient has many Pains. Pain is treated by many Medicine.

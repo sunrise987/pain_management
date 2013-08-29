@@ -7,7 +7,7 @@ if (mysqli_connect_errno()) {
 }
 
 $intens = empty($_POST['intensity']) ?  0: $_POST['intensity'];
-
+$radiation = IsChecked("radiation", "1") ? "b'1'": "b'0'";
 $sleep = IsChecked("effects", "sleep") ? "b'1'": "b'0'";
 $mood = IsChecked("effects", "mood") ? "b'1'": "b'0'";
 $activity = IsChecked("effects", "activity") ? "b'1'": "b'0'";
@@ -16,14 +16,9 @@ $social = IsChecked("effects", "social") ? "b'1'": "b'0'";
 
 //var_dump($social);
 
-$sql="INSERT INTO Pain (LocationOfPain, Pattern, Intensity, CharacterOfPain, Radiation,
-  TypeOfPain, WhatRelievesPain, WhatIncreasesPain, PainAffectsSleep, PainAffectsMood,
-  PainAffectsActivity, PainAffectsNutrition, PainAffectsSocialInteraction, Comments,
-  MedicationPlan)
+$sql="INSERT INTO Pain (PatientID, LocationOfPain, Pattern, Intensity, CharacterOfPain, Radiation, TypeOfPain, WhatRelievesPain, WhatIncreasesPain, PainAffectsSleep, PainAffectsMood, PainAffectsActivity, PainAffectsNutrition, PainAffectsSocialInteraction, Comments, MedicationPlan)
 
-  VALUES ('{$_POST['lop']}', '{$_POST['pattern']}', '$intens', '{$_POST['character']}',
-    '{$_POST['radiation']}', '{$_POST['tp']}', '{$_POST['relieve']}','{$_POST['cause']}', $sleep,
-    $mood, $activity, $nutrition, $social, '{$_POST['comments']}', '{$_POST['plan']}')";
+  VALUES ('{$_POST['PatientID']}', '{$_POST['lop']}', '{$_POST['pattern']}', '$intens', '{$_POST['character']}', $radiation, '{$_POST['tp']}', '{$_POST['relieve']}','{$_POST['cause']}', $sleep, $mood, $activity, $nutrition, $social, '{$_POST['comments']}', '{$_POST['plan']}')";
 
 if (!mysqli_query($con,$sql)) {
   die('Error: ' . mysqli_error($con));

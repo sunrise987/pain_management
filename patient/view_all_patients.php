@@ -37,12 +37,14 @@ while ($row = mysqli_fetch_array($result)) {
   echo "<td>" . $row['PastMedicalHistory'] . "</td>";
   echo "<td>" . $row['PastSurgicalHistory'] . "</td>";
   echo "<td>" . $row['Diagnosis'] . "</td>";
-  echo "<td><button type=\"button\">View Pain Management</button></td>
+  echo "<td><button type=\"button\" onclick=\"location=\'../view_pain_management.php?PatientID="
+    . $row['PatientID'] . "\'\">View Pain Management</button></td>
     </tr>";
 }
 mysqli_close($con);
 ?>
       </table>
     </div>
+<button type="button" onclick="location='insert_patient.php'">Add Patient</button>
   </body>
 </html>

@@ -10,13 +10,16 @@
         <ul class="info">
           <li><label>First Name</label><input type="text" name="fname">
               <label>Last Name</label><input type="text" name="lname"></li>
+
           <li><label>Date Of Birth</label>
               <input name="birth_year" type="number" min="1920" step="1" value="1970">
               <select name="birth_month">
-                <option>January</option><option>February</option><option>March</option>
-                <option>April</option><option>May</option><option>June</option>
-                <option>July</option><option>August</option><option>September</option>
-                <option>October</option><option>November</option><option>December</option>
+                <option value="1">January</option><option value="2">February</option>
+                <option value="3">March</option><option value="4">April</option>
+                <option value="5">May</option><option value="6">June</option>
+                <option value="7">July</option><option value="8">August</option>
+                <option value="9">September</option><option value="10">October</option>
+                <option value="11">November</option><option value="12">December</option>
               </select>
               <select name="birth_day">
                 <?php
@@ -38,13 +41,16 @@ $country_list = array("Afghanistan","Albania","Algeria","Andorra","Angola","Anti
                 ?>
               </select>
           </li>
+
           <li><label>Date Of Addmission</label>
               <input name="addm_year" type="number" min="2000" step="1" value="2013">
               <select name="addm_month">
-                <option>January</option><option>February</option><option>March</option>
-                <option>April</option><option>May</option><option>June</option>
-                <option>July</option><option>August</option><option>September</option>
-                <option>October</option><option>November</option><option>December</option>
+                <option value="1">January</option><option value="2">February</option>
+                <option value="3">March</option><option value="4">April</option>
+                <option value="5">May</option><option value="6">June</option>
+                <option value="7">July</option><option value="8">August</option>
+                <option value="9">September</option><option value="10">October</option>
+                <option value="11">November</option><option value="12">December</option>
               </select>
               <select name="addm_day">
                 <?php

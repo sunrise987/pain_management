@@ -26,8 +26,12 @@ echo "<li><label>Date Of Addmission</label>" . $row['DateOfAddmission'] . "</li>
 echo "<li><label>Medical History</label>" . $row['PastMedicalHistory'] . "</li>";
 echo "<li><label>Surgical History</label>" . $row['PastSurgicalHistory'] . "</li>";
 echo "<li><label>Diagnosis</label>" . $row['Diagnosis'] . "</li>";
-?>
+echo "
   </ul>
   </div>
+  <button type=\"button\" onclick=\"location='view_all_patients.php'\">View All Patients</button>
+  <button type=\"button\" onclick=\"location='../pain/insert_pain.php?PatientID=" . $id . "'\">Add Pain Information</button>
   </body>
-  </html>
+  </html>";
+
+?>

@@ -29,13 +29,12 @@ INSERT INTO Pain (
   1,
   "Best",
   "Shooting",
-  "radiation",
+  b'1',
   "Mixed",
   "plan: blah bleh bloh"
 );
 
 INSERT INTO Medicine VALUES (
-  "1",
   "1",
   "1",
   "2012-09-23",
