@@ -12,9 +12,9 @@ $array = mysqli_query($con, "select Name from Patient where PatientID = $id");
 $row = mysqli_fetch_array($array);
 
 echo "
-  <h2>Pain Management for " . $row['Name'] . "</h2>
   </head>
   <body>
+  <header><h2>Pain Management for " . $row['Name'] . "</h2></header>
     <div class=\"CSSTableGenerator\">
       <table>
         <tr>
@@ -33,6 +33,8 @@ while ($row = mysqli_fetch_array($result)) {
   echo "<td>" . $row['LocationOfPain'] . "</td>";
   echo "<td>" . $row['TypeOfPain'] . "</td>";
   echo "<td>" . $row['Intensity'] . "</td>";
+  echo "<td>" . $row['Opioids'] . "</td></tr>";
+  echo "<td>" . $row[''] . "</td></tr>";
   echo "<td>" . $row['Opioids'] . "</td></tr>";
 }
 mysqli_close($con);

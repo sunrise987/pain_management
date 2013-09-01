@@ -1,9 +1,9 @@
 <html>
   <head>
     <link href="../style.css" rel="stylesheet" type="text/css">
-    <h2>list of patients</h2>
   </head>
   <body>
+    <header><h2>list of patients</h2></header>
     <div class="CSSTableGenerator">
       <table>
         <tr>

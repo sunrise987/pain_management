@@ -3,10 +3,10 @@
     <link href="../style.css" rel="stylesheet" type="text/css">
   </head>
 
-  <body id="body">
-    <div id="PatientContainer">
+  <body>
+    <header><div><h2>Pain Information</h2><div></div></div></header>
+    <div id="Container">
     <form action="process_insert_pain.php" method="post">
-      <header id="header"><div><h2>Pain Data</h2><div></div></div></header>
 
       <ul class="info">
         <li><label>Location Of Pain</label><input type="text"

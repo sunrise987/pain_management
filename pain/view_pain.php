@@ -2,9 +2,9 @@
   <head>
     <link href="../style.css" rel="stylesheet" type="text/css">
   </head>
-  <body id="body">
-    <div id="PatientContainer">
-        <header id="header"><h2>Pain Information</h2><div></div></header>
+  <body>
+    <header><h2>Pain Information</h2><div></div></header>
+    <div id="Container">
         <ul class="info">
 <?php
 $con=mysqli_connect("localhost","php_app","admin000","patient_management");
@@ -29,11 +29,12 @@ echo "<li><label>What causes pain increas?</label>" . $row['WhatIncreasesPain'] 
 echo "<li><label>Indicate if pain affects</label>" . $row['PainAffectsSleep'] . "</li>";
 echo "<li><label>Further comments about the pain</label>" . $row['Comments'] . "</li>";
 echo "<li><label>Plan</label>" . $row['MedicationPlan'] . "</li>";
+echo "
+</ul>
+</div>";
 echo "<button type=\"button\" onclick=\"location='../view_pain_management.php?PatientID="
   . $row['PatientID'] . "'\">View Pain Management</button>";
 ?>
 
-</ul>
-</div>
 </body>
 </html>

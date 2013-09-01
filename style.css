@@ -1,6 +1,6 @@
-.CSSTableGeneratmr {
+.CSSTableGenerator {
   margin:0px;padding:0px;
-  width:70%;
+ /* width:70%; */
   box-shadow: 10px 10px 5px #888888;
   border:1px solid #000000;
 
@@ -114,8 +114,10 @@
   border-width:0px 0px 1px 1px;
 }
 
-/* Patient */
-#body {
+body {
+  margin:auto;
+  width:70%;
+  background-color:#b0e0e0;
 }
 
 [type=button], [type=submit] {
@@ -130,15 +132,14 @@
 
 }
 
-#PatientContainer {
+#Container {
   text-align: left;
-  width: 960px;
   margin: 0 auto 10px auto;
   background: #d3e9ff;
   border: 1px solid #0057af;
 }
 
-#header {
+header {
   display: inline-block;
   clear: both;
   margin: 0 0 5px 0;

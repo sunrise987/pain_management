@@ -2,9 +2,9 @@
   <head>
     <link href="../style.css" rel="stylesheet" type="text/css">
   </head>
-  <body id="body">
-    <div id="PatientContainer">
-        <header id="header"><h2>Patient Information</h2><div></div></header>
+  <body>
+    <header><h2>Patient Information</h2><div></div></header>
+    <div id="Container">
         <ul class="info">
 <?php
 $con=mysqli_connect("localhost","php_app","admin000","patient_management");
@@ -33,5 +33,5 @@ echo "
   <button type=\"button\" onclick=\"location='../pain/insert_pain.php?PatientID=" . $id . "'\">Add Pain Information</button>
   </body>
   </html>";
-
+mysqli_close($con);
 ?>

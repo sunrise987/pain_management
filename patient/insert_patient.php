@@ -2,10 +2,10 @@
   <head>
     <link href="../style.css" rel="stylesheet" type="text/css">
   </head>
-  <body id="body">
-    <div id="PatientContainer">
+  <body>
+    <header><h2>Patient Information</h2><div></div></header>
+    <div id="Container">
       <form action="process_insert_patient.php" method="post">
-        <header id="header"><h2>Patient Information</h2><div></div></header>
 
         <ul class="info">
           <li><label>First Name</label><input type="text" name="fname">
