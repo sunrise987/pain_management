@@ -39,7 +39,7 @@ CREATE TABLE Pain (
 );
 
 CREATE TABLE Medicine (
-  TreatementID INT AUTO_INCREMENT PRIMARY KEY,
+  MedicineID INT AUTO_INCREMENT PRIMARY KEY,
   PainID INT,
   DateTime DATETIME,
   Opioids TINYTEXT,
@@ -47,6 +47,20 @@ CREATE TABLE Medicine (
   Frequency TINYTEXT,
   RouteOfAddmission TINYTEXT,
   SideEffects TEXT,
+  Comments TEXT,
+  FOREIGN KEY (PainID) REFERENCES Pain(PainID)
+);
+
+CREATE TABLE PainManagement (
+  PainManagementID INT AUTO_INCREMENT PRIMARY KEY,
+  PainID INT,
+  DateTime DATETIME,
+  LocationOfPain TINYTEXT,
+  TypeOfPain ENUM ('Somatic', 'Visceral', 'Neuropathic', 'Mixed'),
+  Intensity TINYINT,
+  Opioids TINYTEXT,
+  InfoOtherMed TINYTEXT,
+  SideEffects ENUM ('Anxiety', 'Confusion', 'Constipation', 'Epigastric Distress', 'Hallucinations', 'Increased sedation', 'Motor Weakness', 'Nausea', 'Pruritus', 'Urinary Retention', 'Vomiting'),
   Comments TEXT,
   FOREIGN KEY (PainID) REFERENCES Pain(PainID)
 );

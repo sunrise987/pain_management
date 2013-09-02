@@ -14,6 +14,7 @@ INSERT INTO Patient VALUES (
 
 INSERT INTO Pain (
   PainID,
+  PatientID,
   LocationOfPain,
   Pattern,
   Intensity,
@@ -23,6 +24,7 @@ INSERT INTO Pain (
   TypeOfPain,
   MedicationPlan
 ) VALUES (
+  "1",
   "1",
   "arm",
   "Constant",
@@ -43,5 +45,18 @@ INSERT INTO Medicine VALUES (
   "twice a day",
   "oral",
   "headache",
+  "blah blah"
+);
+
+INSERT INTO PainManagement VALUES (
+  "1",
+  "1",
+  "2012-09-23",
+  "neck",
+  "Somatic",
+  "23",
+  "medicine blah",
+  "info about another med",
+  "Anxiety",
   "blah blah"
 );
