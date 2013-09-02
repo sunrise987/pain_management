@@ -1,21 +1,11 @@
 <html>
   <head>
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <h2>Pain Management</h2>
+    <link href="../style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
+    <header><h2>Medicne Information</h2></header>
     <div class="CSSTableGenerator">
-      <table>
-        <tr>
-          <td class="delete"></td>
-          <td class="datetime">Date/Time</td>
-          <td class="opioids">Opioids</td>
-          <td class="dose">Dose</td>
-          <td class="freq">Frequency</td>
-          <td class="route">Route Of Addmission</td>
-          <td class="se">Side Effects</td>
-          <td class="comment">Comments</td>
-        </tr>
+        <ul class="info">
 
 <?php
 $con=mysqli_connect("localhost", "php_app", "admin000",
@@ -23,20 +13,21 @@ $con=mysqli_connect("localhost", "php_app", "admin000",
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-$result = mysqli_query($con, "SELECT * FROM Medicine");
-while ($row = mysqli_fetch_array($result)) {
-  echo "<tr>
-    <td>X</td>";
-  echo "<td>" . $row['Opioids'] . "</td>";
-  echo "<td>" . $row['Dose'] . "</td>";
-  echo "<td>" . $row['Frequency'] . "</td>";
-  echo "<td>" . $row['RouteOfAddmission'] . "</td>";
-  echo "<td>" . $row['SideEffects'] . "</td>";
-  echo "<td>" . $row['Comments'] . "</td>";
-}
+$id = $_GET['MedicineID'];
+$result = mysqli_query($con, "SELECT * FROM Medicine WHERE MedicineID = $id");
+$row = mysqli_fetch_array($result);
+
+  echo "<li><label>Date Time</label>" . $row['DateTime'] . "</li>";
+  echo "<li><label>Opioids</label>" . $row['Opioids'] . "</li>";
+  echo "<li><label>Dose</label>" . $row['Dose'] . "</li>";
+  echo "<li><label>Frequency</label>" . $row['Frequency'] . "</li>";
+  echo "<li><label>Route Of Addmission</label>" . $row['RouteOfAddmission'] . "</li>";
+  echo "<li><label>Side Effects</label>" . $row['SideEffects'] . "</li>";
+  echo "<li><label>Comments</label>" . $row['Comments'] . "</li>";
+
 mysqli_close($con);
 ?>
-      </table>
+      </ul>
     </div>
   </body>
 </html>
