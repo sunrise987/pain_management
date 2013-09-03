@@ -1,11 +1,6 @@
 <html>
   <head>
     <link href="../style.css" rel="stylesheet" type="text/css">
-  </head>
-  <body>
-    <header><h2>Medicne Information</h2></header>
-    <div class="CSSTableGenerator">
-        <ul class="info">
 
 <?php
 $con=mysqli_connect("localhost", "php_app", "admin000",
@@ -13,9 +8,24 @@ $con=mysqli_connect("localhost", "php_app", "admin000",
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
+
 $id = $_GET['MedicineID'];
 $result = mysqli_query($con, "SELECT * FROM Medicine WHERE MedicineID = $id");
 $row = mysqli_fetch_array($result);
+
+echo "
+  </head>
+  <body>
+    <header><div>
+      <h2>Medicne Information</h2>
+      <input type='button' name='delete' value='Delete'
+        onclick=\"location='delete_medicine.php?PainManagementID=" . $id . "'\">
+      <input type='button' name='edit' value='Edit'
+        onclick=\"location='edit_medicine.php?PainID=" . $row['PainID'] .
+        "&PainManagementID=" . $id . "'\">
+    </div></header>
+    <div class='CSSTableGenerator'>
+      <ul class='info'>";
 
   echo "<li><label>Date Time</label>" . $row['DateTime'] . "</li>";
   echo "<li><label>Opioids</label>" . $row['Opioids'] . "</li>";

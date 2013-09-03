@@ -1,6 +1,7 @@
 DROP DATABASE Patient_Management;
 create database patient_management;
 use patient_management;
+set session time_zone = '+3:00';
 
 CREATE TABLE Patient (
   PatientID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -60,7 +61,7 @@ CREATE TABLE PainManagement (
   Intensity TINYINT,
   Opioids TINYTEXT,
   InfoOtherMed TINYTEXT,
-  SideEffects ENUM ('Anxiety', 'Confusion', 'Constipation', 'Epigastric Distress', 'Hallucinations', 'Increased sedation', 'Motor Weakness', 'Nausea', 'Pruritus', 'Urinary Retention', 'Vomiting'),
+  SideEffects ENUM ('Anxiety', 'Confusion', 'Constipation', 'Epigastric Distress', 'Hallucinations', 'Increased Sedation', 'Motor Weakness', 'Nausea', 'Pruritus', 'Urinary Retention', 'Vomiting'),
   Comments TEXT,
   FOREIGN KEY (PainID) REFERENCES Pain(PainID)
 );

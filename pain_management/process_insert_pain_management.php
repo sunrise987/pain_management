@@ -10,6 +10,7 @@ $month = $_POST['month'];
 $year = $_POST['year'];
 $date = "$year-$month-$day";
 
+
 $sql = "INSERT INTO PainManagement (DateTime, LocationOfPain, TypeOfPain, Intensity, Opioids, InfoOtherMed, SideEffects, Comments)
 
   VALUES ('$date', '{$_POST['lop']}', '{$_POST['top']}', '{$_POST['intensity']}',

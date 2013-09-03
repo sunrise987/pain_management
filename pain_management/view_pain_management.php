@@ -8,17 +8,22 @@ if (mysqli_connect_errno()) {
 }
 
 $id = $_GET['PainManagementID'];
-$array = mysqli_query($con, "select * from PainManagement where PainManagementID = $id");
-$row = mysqli_fetch_array($array);
+$result = mysqli_query($con, "SELECT * FROM PainManagement where PainManagementID = $id");
+$row = mysqli_fetch_array($result);
 
 echo "
   </head>
   <body>
-  <header><h2>Pain Management</h2></header>
+  <header>
+    <div>
+      <h2>Pain Management</h2>
+      <input type=\"button\" name=\"delete\" value=\"Delete\"
+        onclick=\"location='delete_pain_management.php?PainManagementID=" . $id . "'\">
+      <input type=\"button\" name=\"edit\" value=\"Edit\"
+        onclick=\"location='edit_pain_management.php?PainID=" . $row['PainID'] . "&PainManagementID=" . $id . "'\">
+    </div>
+  </header>
     <div class=\"CSSTableGenerator\">";
-
-$result = mysqli_query($con, "SELECT * FROM PainManagement where PainManagementID = $id");
-$row = mysqli_fetch_array($result);
 
   echo "<li><label>Date/Time</label>" . $row['DateTime'] . "</li>";
   echo "<li><label>Location of Pain</label>" . $row['LocationOfPain'] . "</li>";
