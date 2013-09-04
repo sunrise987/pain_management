@@ -5,8 +5,12 @@ if (mysqli_connect_errno()) {
 }
 
 $id = $_GET['PainManagementID'];
-mysqli_query($con, "delete from PainManagement where PainManagementID = $id");
-echo "Record was deleted.";
+if (empty($id))
+  echo "Error at delete, wrong ID.";
+else {
+  mysqli_query($con, "delete from PainManagement where PainManagementID = $id");
+  echo "Record was deleted.";
+}
 
 mysqli_close($con);
 ?>

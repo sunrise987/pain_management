@@ -17,7 +17,7 @@ CREATE TABLE Patient (
 
 CREATE TABLE Pain (
   PainID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  PatientID INT,
+  PatientID INT NOT NULL,
   LocationOfPain TINYTEXT,
   Pattern ENUM  ('Constant', 'Intermittent'),
   Intensity TINYINT,
@@ -40,8 +40,8 @@ CREATE TABLE Pain (
 );
 
 CREATE TABLE Medicine (
-  MedicineID INT AUTO_INCREMENT PRIMARY KEY,
-  PainID INT,
+  MedicineID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  PainID INT NOT NULL,
   DateTime DATETIME,
   Opioids TINYTEXT,
   Dose TINYTEXT,
@@ -53,8 +53,8 @@ CREATE TABLE Medicine (
 );
 
 CREATE TABLE PainManagement (
-  PainManagementID INT AUTO_INCREMENT PRIMARY KEY,
-  PainID INT,
+  PainManagementID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  PainID INT NOT NULL,
   DateTime DATETIME,
   LocationOfPain TINYTEXT,
   TypeOfPain ENUM ('Somatic', 'Visceral', 'Neuropathic', 'Mixed'),
