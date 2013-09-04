@@ -1,4 +1,15 @@
 <?php
+/* url : edit_medicine.php?PainID=n&MedicineID=m for editing Medicine m.
+ * url : edit_medicine.php?PainID=n&MedicineID= for inserting new Medicine.
+ *       MedicineID will be automatically asigned. */
+
+/* TODO : handle error cases (for insert):
+ * 1. MedicineID in url is not valid.
+ *
+ * TODO : handle error cases (for insert or edit):
+ * 1. PainID is not valid.
+ */
+
 require '../date.php';
 $con=mysqli_connect("localhost", "php_app", "admin000", "patient_management");
 if (mysqli_connect_errno()) {

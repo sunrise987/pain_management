@@ -1,8 +1,13 @@
+<?php
+/* url : /view_medicine.php?MedicineID=n */
+/* TODO: handle invalid MedicineID error.
+ */
+echo "
 <html>
   <head>
-    <link href="../style.css" rel="stylesheet" type="text/css">
+    <link href='../style.css' rel='stylesheet' type='text/css'>
+    ";
 
-<?php
 $con=mysqli_connect("localhost", "php_app", "admin000",
   "patient_management");
 if (mysqli_connect_errno()) {
@@ -19,10 +24,10 @@ echo "
     <header><div>
       <h2>Medicne Information</h2>
       <input type='button' name='delete' value='Delete'
-        onclick=\"location='delete_medicine.php?PainManagementID=" . $id . "'\">
+        onclick=\"location='delete_medicine.php?MedicineID=" . $id . "'\">
       <input type='button' name='edit' value='Edit'
         onclick=\"location='edit_medicine.php?PainID=" . $row['PainID'] .
-        "&PainManagementID=" . $id . "'\">
+        "&MedicineID=" . $id . "'\">
     </div></header>
     <div class='CSSTableGenerator'>
       <ul class='info'>";

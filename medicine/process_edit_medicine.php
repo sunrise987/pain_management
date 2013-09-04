@@ -15,7 +15,7 @@ $id = $_POST['id'];
 $sql = "
 UPDATE Medicine
 SET
-  PainID='{$_POST['id']}',
+  PainID='{$_POST['painid']}',
   DateTime='$date',
   Opioids='{$_POST['opioids']}',
   Dose='{$_POST['dose']}',
@@ -25,6 +25,7 @@ SET
   Comments='{$_POST['comments']}'
 WHERE MedicineID = $id
 ";
+var_dump($sql);
 
 if (empty($id)) {
   $sql = "
@@ -35,6 +36,8 @@ if (empty($id)) {
       '{$_POST['opioids']}', '{$_POST['dose']}', '{$_POST['frequency']}',
       '{$_POST['route']}', '{$_POST['sideeffects']}', '{$_POST['comments']}')";
 }
+
+var_dump($sql);
 
 if (!mysqli_query($con,$sql)) {
   die('Error: ' . mysqli_error($con));
