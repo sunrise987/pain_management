@@ -35,7 +35,6 @@ CREATE TABLE Pain (
   PainAffectsNutrition TINYINT(1),
   PainAffectsSocialInteraction TINYINT(1),
   Comments TEXT,
-  MedicationPlan TEXT,
   FOREIGN KEY (PatientID) REFERENCES Patient(PatientID)
 );
 

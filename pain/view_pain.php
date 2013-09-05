@@ -42,11 +42,14 @@ echo "<li><label>What relieves the pain?</label>" . $row['WhatRelievesPain'] . "
 echo "<li><label>What causes pain increas?</label>" . $row['WhatIncreasesPain'] . "</li>";
 echo "<li><label>Indicate if pain affects</label>" . $row['PainAffectsSleep'] . "</li>";
 echo "<li><label>Further comments about the pain</label>" . $row['Comments'] . "</li>";
-echo "<li><label>Plan</label>" . $row['MedicationPlan'] . "</li>";
+echo "<li><label>Plan </label>";
+include '../medicine/view_all_medicine_body.php';
+echo "</li>";
 echo "  </ul>
       </div>
-      <button type=\"button\" onclick=\"location='../view_pain_management.php?PatientID="
-      . $row['PatientID'] . "'\">View Pain Management</button>";
+      <button type=\"button\"
+      onclick=\"location='../pain_management/edit_pain_management.php?PainID=". $id
+      ."&PainManagementID='\">Add Pain Management Entry</button>";
 
 include '../pain_management/view_all_pain_managements_body.php';
 
@@ -55,4 +58,7 @@ echo "
 </html>";
 
 mysqli_close($con);
+
+/*
+*/
 ?>

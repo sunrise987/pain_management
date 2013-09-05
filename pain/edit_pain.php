@@ -1,11 +1,11 @@
 <?php
-/* TODO:
- * - handle invalid input errors.
- * - correctly retrive and show values of "indicate if it affects" and "At this moment".
- * - Validity of input.
- * - The ability to save, edit and retrieve multiple values at 'Character'. (Not sure this is necessary. Ask for feedback from client.)
- */
 /* url : edit_pain.php?PatientID=n&PainID=m */
+
+/* TODO:
+ * - Handle invalid input errors.
+ * - Allow user to save, edit or retrieve multiple values of 'CharacterOfPain'.
+ *   (Not sure this is necessary. Ask for feedback from client.)
+ */
 
 require '../lib/generate_options.php';
 
@@ -30,7 +30,7 @@ if ($array != false) {
   "PainAffectsSleep" => "", "PainAffectsMood" => "",
   "PainAffectsActivity" => "", "PainAffectsNutrition" => "",
   "PainAffectsSocialInteraction" => "",
-  "Comments" => "", "MedicationPlan" => "");
+  "Comments" => "");
   echo "We are inserting.";
 }
 
@@ -131,8 +131,13 @@ echo "
           <label>Further comments about the pain</label>
           <input type='text' name='comments'value='" . $row['Comments'] . "'>
         </li>
-        <li><label>Plan</label><input type='text' name='plan'value='" . $row['MedicationPlan'] .
-           "'></li>
+        <li><label>Plan </label>";
+            include '../medicine/view_all_medicine_body.php';
+            echo "
+            <input type='button' name='add_medicine' value='Add Medicine'
+              onclick=\"location='../medicine/edit_medicine.php?PainID="
+              . $id . "&MedicineID='\">
+        </li>
         <li>
             <input type='hidden' name='id'
               value='" . $_GET['PainID'] . "'>
@@ -147,4 +152,10 @@ echo "
   </body>
   </html>
   ";
+
+/*
+
+*/
 ?>
+
+

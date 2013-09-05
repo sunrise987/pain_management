@@ -38,8 +38,7 @@ SET
   PainAffectsActivity='$activity',
   PainAffectsNutrition='$nutrition',
   PainAffectsSocialInteraction='$social',
-  Comments='{$_POST['comments']}',
-  MedicationPlan='{$_POST['plan']}'
+  Comments='{$_POST['comments']}'
 WHERE PainID = $id
 ";
 
@@ -50,8 +49,7 @@ if (empty($id)) {
       CharacterOfPain, CharacterOther,
       Radiation, TypeOfPain, Mixed, WhatRelievesPain, WhatIncreasesPain,
       PainAffectsSleep, PainAffectsMood, PainAffectsActivity,
-      PainAffectsNutrition, PainAffectsSocialInteraction, Comments,
-      MedicationPlan
+      PainAffectsNutrition, PainAffectsSocialInteraction, Comments
     )
     VALUES (
       '{$_POST['patientid']}', '{$_POST['lop']}', '{$_POST['pattern']}',
@@ -59,7 +57,7 @@ if (empty($id)) {
       '{$_POST['other']}', $radiation,
       '{$_POST['tp']}', '{$_POST['mixed']}',
       '{$_POST['relieve']}','{$_POST['cause']}', $sleep, $mood, $activity,
-      $nutrition, $social, '{$_POST['comments']}', '{$_POST['plan']}'
+      $nutrition, $social, '{$_POST['comments']}'
     )";
 }
 

@@ -14,15 +14,8 @@ if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-$painid = $_GET['PainID'];
-$result = mysqli_query($con, "
-  SELECT MedicineID, Opioids FROM Medicine where PainID = $painid");
+include 'view_all_medicine_body.php';
 
-while ($row = mysqli_fetch_array($result)) {
-  echo "<a href='view_medicine.php?MedicineID=" .
-    $row['MedicineID'] . "'\" target='_blank'>" .
-    $row['Opioids'] . "<br></a>";
-}
 mysqli_close($con);
 echo "
     </div>

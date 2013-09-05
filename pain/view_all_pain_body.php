@@ -1,4 +1,12 @@
 <?php
+/* Notes:
+ * - medicine cannot be viewed for list of pains.
+ * Following code does not work without passing PainID in url.
+    echo "<td>";
+    include '../medicine/view_all_medicine_body.php';
+    echo "</td>";
+ * */
+
 $patientid = $_GET['PatientID'];
 $row = mysqli_fetch_array(mysqli_query($con, "
   SELECT Name FROM Patient WHERE PatientID = $patientid"));
@@ -33,7 +41,6 @@ while ($row = mysqli_fetch_array($result)) {
   echo "<td>" . $row['WhatRelievesPain'] . "</td>";
   echo "<td>" . $row['WhatIncreasesPain'] . "</td>";
   echo "<td>" . $row['Comments'] . "</td>";
-  echo "<td>" . $row['MedicationPlan'] . "</td>";
 }
 echo "
       </table>
