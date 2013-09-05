@@ -1,7 +1,9 @@
 <?php
-// This file has to be run as : edit_pain_management.php?PainManagementID=n&PainID=n
+/* url : edit_pain_management.php?PainManagementID=n&PainID=n */
 
-require '../date.php';
+require '../lib/date.php';
+require '../lib/generate_options.php';
+
 $con=mysqli_connect("localhost", "php_app", "admin000", "patient_management");
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -18,17 +20,6 @@ else
 $top = array("Somatic", "Visceral", "Neuropathic", "Mixed");
 $sideeffects = array("Anxiety", "Confution", "Constipation", "Epigastric Distress", "Hallucination",
   "Increased sedation", "Motor Weakness", "Nausea", "pruritus", "Urinary Retention", "Vomiting");
-
-/* Output select options from array and mark $str as selected (default value.) */
-function output_options_from_array($arr, $str) {
-  for ($x = 0; $x < sizeof($arr); $x++) {
-    echo "<option ";
-    if (strcmp($str, $arr[$x]) == 0) {
-      echo "selected ";
-    }
-    echo "value='" . $arr[$x] . "'>" .  $arr[$x] . "</option>";
-  }
-}
 
 echo "
 <html>

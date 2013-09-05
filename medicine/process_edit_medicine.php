@@ -30,7 +30,8 @@ var_dump($sql);
 if (empty($id)) {
   $sql = "
     INSERT INTO Medicine (
-      PainID, DateTime, Opioids, Dose, Frequency, RouteOfAddmission, SideEffects, Comments
+      PainID, DateTime, Opioids, Dose, Frequency, RouteOfAddmission,
+      SideEffects, Comments
     )
     VALUES ('{$_POST['painid']}', '$date',
       '{$_POST['opioids']}', '{$_POST['dose']}', '{$_POST['frequency']}',

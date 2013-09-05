@@ -29,7 +29,7 @@ INSERT INTO Pain (
   "arm",
   "Constant",
   1,
-  "Best",
+  "Better",
   "Shooting",
   b'1',
   "Mixed",

@@ -1,14 +1,18 @@
+<?php
+echo "
 <html>
   <head>
-    <link href="../style.css" rel="stylesheet" type="text/css">
-<?php
+    <link href='../style.css' rel='stylesheet' type='text/css'>
+";
+
 $con=mysqli_connect("localhost", "php_app", "admin000", "patient_management");
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
 $painid = $_GET['PainID'];
-$array = mysqli_query($con, "select Name from Patient join Pain where PainID = $painid");
+$array = mysqli_query($con, "
+  SELECT Name FROM Patient JOIN Pain WHERE PainID = $painid");
 $row = mysqli_fetch_array($array);
 
 echo "
