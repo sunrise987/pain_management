@@ -1,4 +1,5 @@
 <?php
+/* url : /view_patient.php?PatientID=n */
 
 echo "
 <html>
@@ -41,7 +42,11 @@ echo "
     <button type='button' onclick=\"location='view_all_patients.php'\">
       View All Patients</button>
     <button type='button' onclick=\"location='../pain/edit_pain.php?PatientID=".$id."&PainID='\">
-      Add Pain Information</button>
+      Add Pain Information</button>";
+
+    $url = "../pain/view_all_pain_body.php";
+    include "$url";
+    echo "
   </body>
 </html>";
 

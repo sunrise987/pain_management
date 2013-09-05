@@ -43,13 +43,16 @@ echo "<li><label>What causes pain increas?</label>" . $row['WhatIncreasesPain'] 
 echo "<li><label>Indicate if pain affects</label>" . $row['PainAffectsSleep'] . "</li>";
 echo "<li><label>Further comments about the pain</label>" . $row['Comments'] . "</li>";
 echo "<li><label>Plan</label>" . $row['MedicationPlan'] . "</li>";
+echo "  </ul>
+      </div>
+      <button type=\"button\" onclick=\"location='../view_pain_management.php?PatientID="
+      . $row['PatientID'] . "'\">View Pain Management</button>";
+
+include '../pain_management/view_all_pain_managements_body.php';
 
 echo "
-        </ul>
-    </div>
-        ";
-echo "<button type=\"button\" onclick=\"location='../view_pain_management.php?PatientID="
-  . $row['PatientID'] . "'\">View Pain Management</button>";
-?>
   </body>
-</html>
+</html>";
+
+mysqli_close($con);
+?>
