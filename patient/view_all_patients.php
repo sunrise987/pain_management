@@ -33,7 +33,7 @@ while ($row = mysqli_fetch_array($result)) {
   echo "<td>" . $row['DateOfBirth'] . "</td>";
   echo "<td>" . $row['Gender'] . "</td>";
   echo "<td>" . $row['Nationality'] . "</td>";
-  echo "<td>" . $row['DateOfAddmission'] . "</td>";
+  echo "<td>" . $row['DateOfAdmission'] . "</td>";
   echo "<td>" . $row['PastMedicalHistory'] . "</td>";
   echo "<td>" . $row['PastSurgicalHistory'] . "</td>";
   echo "<td>" . $row['Diagnosis'] . "</td>";
@@ -45,6 +45,6 @@ mysqli_close($con);
 ?>
       </table>
     </div>
-<button type="button" onclick="location='insert_patient.php'">Add Patient</button>
+<button type="button" onclick="location='edit_patient.php?PatientID='">Add Patient</button>
   </body>
 </html>

@@ -9,7 +9,7 @@ CREATE TABLE Patient (
   DateOfBirth DATE,
   Gender ENUM ('male', 'female'),
   Nationality VARCHAR(40),
-  DateOfAddmission DATE,
+  DateOfAdmission DATE,
   PastMedicalHistory TEXT,
   PastSurgicalHistory TEXT,
   Diagnosis TINYTEXT
@@ -46,7 +46,7 @@ CREATE TABLE Medicine (
   Opioids TINYTEXT,
   Dose TINYTEXT,
   Frequency TINYTEXT,
-  RouteOfAddmission TINYTEXT,
+  RouteOfAdmission TINYTEXT,
   SideEffects TEXT,
   Comments TEXT,
   FOREIGN KEY (PainID) REFERENCES Pain(PainID)

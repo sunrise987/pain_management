@@ -18,11 +18,11 @@ if (mysqli_connect_errno()) {
 }
 $id = $_GET['MedicineID'];
 
-$result = mysqli_query($con, "select * from Medicine where MedicineID = $id");
+$result = mysqli_query($con, "SELECT * FROM Medicine WHERE MedicineID = $id");
 if ($result != false)
   $row = mysqli_fetch_array($result);
 else
-  $row = array("DateTime" => "", "Opioids" => "", "Dose" => "", "Frequency" => "", "RouteOfAddmission" => "", "SideEffects" => "", "Comments" => "");
+  $row = array("DateTime" => "", "Opioids" => "", "Dose" => "", "Frequency" => "", "RouteOfAdmission" => "", "SideEffects" => "", "Comments" => "");
 
 echo "
 <html>
@@ -48,8 +48,8 @@ echo "
               <input type='text' name='dose' value='" . $row['Dose'] . "'></li>
           <li><label>Frequency</label>
               <input type='text' name='frequency' value='" . $row['Frequency'] . "'></li>
-          <li><label>Route Of Addmission</label>
-              <input type='text' name='route' value='" . $row['RouteOfAddmission'] . "'></li>
+          <li><label>Route Of Admission</label>
+              <input type='text' name='route' value='" . $row['RouteOfAdmission'] . "'></li>
           <li><label>Side Effects</label>
               <input type='text' name='sideeffects' value='" . $row['SideEffects'] . "'></li>
           <li><label>Comments</label>

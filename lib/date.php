@@ -35,14 +35,18 @@ function output_day_options($selected_day) {
  * Expects parameter $date to be an array of date variables as returned
  * by function date_parse(). */
 function output_date_fields($date) {
+  output_date_fields_with_name($date, 'year', 'month', 'day');
+}
+
+function output_date_fields_with_name($date, $y_name, $m_name, $d_name) {
   echo "
-  <input name='year' type='number' min='1920' step='1'
+  <input name='". $y_name ."' type='number' min='1900' step='1'
     value='" . $date['year'] . "'>
-    <select name='month'>";
+    <select name='". $m_name ."'>";
   output_month_options($date['month']);
   echo "
     </select>
-    <select name='day'>";
+    <select name='". $d_name ."'>";
   output_day_options($date['day']);
   echo "
     </select>";

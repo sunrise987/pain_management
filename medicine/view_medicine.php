@@ -36,7 +36,7 @@ echo "
   echo "<li><label>Opioids</label>" . $row['Opioids'] . "</li>";
   echo "<li><label>Dose</label>" . $row['Dose'] . "</li>";
   echo "<li><label>Frequency</label>" . $row['Frequency'] . "</li>";
-  echo "<li><label>Route Of Addmission</label>" . $row['RouteOfAddmission'] . "</li>";
+  echo "<li><label>Route Of Admission</label>" . $row['RouteOfAdmission'] . "</li>";
   echo "<li><label>Side Effects</label>" . $row['SideEffects'] . "</li>";
   echo "<li><label>Comments</label>" . $row['Comments'] . "</li>";
 

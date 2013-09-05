@@ -20,7 +20,7 @@ SET
   Opioids='{$_POST['opioids']}',
   Dose='{$_POST['dose']}',
   Frequency='{$_POST['frequency']}',
-  RouteOfAddmission='{$_POST['route']}',
+  RouteOfAdmission='{$_POST['route']}',
   SideEffects='{$_POST['sideeffects']}',
   Comments='{$_POST['comments']}'
 WHERE MedicineID = $id
@@ -30,7 +30,7 @@ var_dump($sql);
 if (empty($id)) {
   $sql = "
     INSERT INTO Medicine (
-      PainID, DateTime, Opioids, Dose, Frequency, RouteOfAddmission,
+      PainID, DateTime, Opioids, Dose, Frequency, RouteOfAdmission,
       SideEffects, Comments
     )
     VALUES ('{$_POST['painid']}', '$date',
