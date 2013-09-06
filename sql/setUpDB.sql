@@ -17,7 +17,7 @@ CREATE TABLE Patient (
 
 CREATE TABLE Pain (
   PainID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  PatientID INT NOT NULL,
+  PatientID INT NOT NULL UNIQUE,
   LocationOfPain TINYTEXT,
   Pattern ENUM  ('Constant', 'Intermittent'),
   Intensity TINYINT,

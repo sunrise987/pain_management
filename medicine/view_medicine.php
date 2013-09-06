@@ -1,25 +1,24 @@
 <?php
 /* url : /view_medicine.php?MedicineID=n */
-/* TODO: handle invalid MedicineID error.
- */
+/* TODO: handle invalid MedicineID error. */
+
+$con=mysqli_connect("localhost", "php_app", "admin000", "patient_management");
+if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
 echo "
 <html>
   <head>
     <link href='../style.css' rel='stylesheet' type='text/css'>
-    ";
-
-$con=mysqli_connect("localhost", "php_app", "admin000",
-  "patient_management");
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+  </head>";
+require '../side_bar/medicine_buttons.php';
 
 $id = $_GET['MedicineID'];
 $result = mysqli_query($con, "SELECT * FROM Medicine WHERE MedicineID = $id");
 $row = mysqli_fetch_array($result);
 
 echo "
-  </head>
   <body>
     <header><div>
       <h2>Medicne Information</h2>

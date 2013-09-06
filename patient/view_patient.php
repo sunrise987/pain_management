@@ -1,23 +1,25 @@
 <?php
 /* url : /view_patient.php?PatientID=n */
-
-echo "
-<html>
-  <head>
-    <link href='../style.css' rel='stylesheet' type='text/css'>
-  </head>
-  <body>";
+/* TODO: */
 
 $con=mysqli_connect("localhost","php_app","admin000","patient_management");
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
+echo "
+<html>
+  <head>
+    <link href='../style.css' rel='stylesheet' type='text/css'>
+  </head>";
+require '../side_bar/patient_buttons.php';
+
 $id = $_GET['PatientID'];
 $result = mysqli_query($con, "SELECT * FROM Patient where PatientID=$id");
 $row = mysqli_fetch_array($result);
 
 echo "
+  <body>
     <header><div>
       <h2>Patient Information</h2>
       <input type='button' name='delete' value='Delete'

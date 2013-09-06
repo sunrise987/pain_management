@@ -2,24 +2,24 @@
 /* url : /view_pain.php?PainID=n */
 /* TODO: handle invalid PainID error.*/
 
-echo "
-<html>
-  <head>
-    <link href='../style.css' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
-        ";
-
 $con=mysqli_connect("localhost","php_app","admin000","patient_management");
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
+
+echo "
+<html>
+  <head>
+    <link href='../style.css' rel='stylesheet' type='text/css'>
+  </head>";
+require '../side_bar/pain_buttons.php';
 
 $id = $_GET['PainID'];
 $result = mysqli_query($con, "SELECT * FROM Pain where PainID=$id");
 $row = mysqli_fetch_array($result);
 
 echo "
+  <body>
     <header><div>
       <h2>Pain Information</h2>
       <input type='button' name='delete' value='Delete'
@@ -44,21 +44,15 @@ echo "<li><label>Indicate if pain affects</label>" . $row['PainAffectsSleep'] . 
 echo "<li><label>Further comments about the pain</label>" . $row['Comments'] . "</li>";
 echo "<li><label>Plan </label>";
 include '../medicine/view_all_medicine_body.php';
-echo "</li>";
-echo "  </ul>
-      </div>
-      <button type=\"button\"
-      onclick=\"location='../pain_management/edit_pain_management.php?PainID=". $id
-      ."&PainManagementID='\">Add Pain Management Entry</button>";
+echo "</li></ul></div>";
 
 include '../pain_management/view_all_pain_managements_body.php';
-
+echo "<input type='button' value='Add Pain Management Entry'
+      onclick=\"location='../pain_management/edit_pain_management.php?PainID=". $id
+      ."&PainManagementID='\">";
 echo "
   </body>
 </html>";
 
 mysqli_close($con);
-
-/*
-*/
 ?>

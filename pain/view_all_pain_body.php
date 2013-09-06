@@ -1,10 +1,5 @@
 <?php
 /* Notes:
- * - medicine cannot be viewed for list of pains.
- * Following code does not work without passing PainID in url.
-    echo "<td>";
-    include '../medicine/view_all_medicine_body.php';
-    echo "</td>";
  * */
 
 $patientid = $_GET['PatientID'];
@@ -15,7 +10,7 @@ echo "
     <div class='CSSTableGenerator'>
       <table>
         <tr>
-          <td class='delete'></td>
+
           <td class='lop'>Location of Pain</td>
           <td class='pattern'>Pattern</td>
           <td class='intensity'>Intensity</td>
@@ -26,12 +21,13 @@ echo "
           <td class='increase'>What increases pain</td>
           <td class='comments'>Comments</td>
           <td class='plan'>Plan</td>
+          <td class='view_edit_delete'></td>
           ";
 
 $result = mysqli_query($con, "
   SELECT * FROM Pain WHERE PatientID= $patientid");
 while ($row = mysqli_fetch_array($result)) {
-  echo "<tr><td>X</td>";
+  echo "<tr>";
   echo "<td>" . $row['LocationOfPain'] . "</td>";
   echo "<td>" . $row['Pattern'] . "</td>";
   echo "<td>" . $row['Intensity'] . "</td>";
@@ -41,8 +37,30 @@ while ($row = mysqli_fetch_array($result)) {
   echo "<td>" . $row['WhatRelievesPain'] . "</td>";
   echo "<td>" . $row['WhatIncreasesPain'] . "</td>";
   echo "<td>" . $row['Comments'] . "</td>";
+
+  $painid = $row['PainID'];
+  $medicine_result = mysqli_query($con, "
+    SELECT MedicineID, Opioids FROM Medicine where PainID = $painid");
+  echo "<td>";
+    while ($medicine_row = mysqli_fetch_array($medicine_result)) {
+      echo "<a href='../medicine/view_medicine.php?MedicineID=" .
+        $medicine_row['MedicineID'] . "'\" target='_blank'>" .
+        $medicine_row['Opioids'] . "<br></a>";
+    }
+  echo "</td>";
+
+  echo "<td><input type='button' value='View'
+    onclick=\"location='../pain/view_pain.php?PainID="
+    . $painid . "'\">";
+  echo "<input type='button' value='Edit'
+    onclick=\"location='../pain/edit_pain.php?PainID="
+    . $painid . "'\">";
+  echo "<input type='button' value='Delete'
+    onclick=\"location='../pain/delete_pain.php?PainID="
+    . $painid . "'\"></td>";
+  echo "</tr>";
+
 }
-echo "
-      </table>
+echo "</table>
     </div>";
 ?>
