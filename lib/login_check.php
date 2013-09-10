@@ -9,6 +9,7 @@ if (isset($_SESSION['user_email'])) {
   $row = mysqli_fetch_array($result);
   $duration = (time() - $_SESSION['time']) / (60*60);
   echo $duration;
+  require 'header.php';
 
   if (strcmp($email, $row['Email']) != 0 || $duration >= 6) {
     //User is invalid, redirect to login page.

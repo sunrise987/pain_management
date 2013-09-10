@@ -13,17 +13,20 @@ echo "
 require '../side_bar/pain_buttons.php';
 
 $id = $_GET['PainID'];
-$result = mysqli_query($con, "SELECT * FROM Pain where PainID=$id");
-$row = mysqli_fetch_array($result);
+$row = mysqli_fetch_array(mysqli_query($con, "
+  SELECT * FROM Pain WHERE PainID=$id"));
+$patientid = $row['PatientID'];
+$row_patient = mysqli_fetch_array(mysqli_query($con, "
+  SELECT Name FROM Patient WHERE PatientID=$patientid"));
 
 echo "
   <body>
     <header><div>
-      <h2>Pain Information</h2>
+      <h2>Pain Information for " . $row_patient['Name'] . "</h2>
       <input type='button' name='delete' value='Delete'
         onclick=\"location='delete_pain.php?PainID=" . $id . "'\">
       <input type='button' name='edit' value='Edit'
-        onclick=\"location='edit_pain.php?PatientID=" . $row['PatientID'] .
+        onclick=\"location='edit_pain.php?PatientID=" . $patientid .
         "&PainID=" . $id . "'\">
     </div></header>
     <div id='Container'>

@@ -12,6 +12,16 @@ require '../lib/mysql_connect.php';
 require '../lib/login_check.php';
 ?>
 
+<script language="javascript">
+function checkDelete(id) {
+  var message = "Are you sure you want to delete this Patient? Subsequently all the records of pain, pain management and medicine for this patient will be deleted. ";
+
+  if (confirm(message)) {
+    location='../patient/delete_patient.php?PatientID=' + id;
+  }
+}
+</script>
+
 <html>
   <head>
     <link href='../style.css' rel='stylesheet' type='text/css'>
@@ -61,12 +71,18 @@ while ($row = mysqli_fetch_array($result)) {
   echo "<input type='button' value='Edit'
     onclick=\"location='../patient/edit_patient.php?PatientID="
     . $id . "'\">";
-  echo "<input type='button' value='Delete'
-    onclick=\"location='../patient/delete_patient.php?PatientID="
-    . $id . "'\"></td>";
-  echo "</tr>";
-}
 
+  $message = "Are you sure you want to delete this Patient? Subsequently all the records of pain, pain management and medicine for this patient will be deleted. ";
+  echo "<input type='button' value='Delete'
+    onclick=\"return confirm('" . $message . "')\"
+    onclick=\"location='../patient/delete_patient.php?PatientID="
+    . $id . "'\">";
+
+  echo "<input type='button' value='newDelete'
+    onclick=\"checkDelete('".$id."')\">";
+
+  echo "</td></tr>";
+}
 mysqli_close($con);
 ?>
       </table>

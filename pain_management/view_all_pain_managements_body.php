@@ -2,7 +2,7 @@
 
 $painid = $_GET['PainID'];
 $array = mysqli_query($con, "
-  SELECT Name FROM Patient JOIN Pain WHERE PainID = $painid");
+  SELECT Name FROM Patient JOIN Pain USING (PatientID) WHERE PainID = $painid");
 $row = mysqli_fetch_array($array);
 
 echo "

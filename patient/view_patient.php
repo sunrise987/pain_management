@@ -38,13 +38,10 @@ echo "<li><label>Diagnosis</label>" . $row['Diagnosis'] . "</li>";
 echo "
       </ul>
     </div>
-    <button type='button' onclick=\"location='view_all_patients.php'\">
-      View All Patients</button>
-    <button type='button' onclick=\"location='../pain/edit_pain.php?PatientID=".$id."&PainID='\">
-      Add Pain Information</button>";
+    <input type='button' value='Add Pain Information'
+      onclick=\"location='../pain/edit_pain.php?PatientID=".$id."&PainID='\">";
 
-    $url = "../pain/view_all_pain_body.php";
-    include "$url";
+    include "../pain/view_all_pain_body.php";
     echo "
   </body>
 </html>";
