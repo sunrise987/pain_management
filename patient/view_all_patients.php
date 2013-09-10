@@ -1,5 +1,4 @@
 <?php
-
   // TODO:
   // Check with client:
   // If necessary to make relationship from Patient to Pain
@@ -9,7 +8,10 @@
   // by date. To do that you have to add a Date entry in Patient table.
   // Also, don't forget to remove the UNIQUE label at PatientID in Pain.
 
-echo "
+require '../lib/mysql_connect.php';
+require '../lib/login_check.php';
+?>
+
 <html>
   <head>
     <link href='../style.css' rel='stylesheet' type='text/css'>
@@ -30,13 +32,9 @@ echo "
           <td class='diag'>Diagnosis</td>
           <td class='view_button'>Pain Info</td>
           <td class='view_edit_delete'></td>
-        </tr>";
+        </tr>
 
-$con=mysqli_connect("localhost", "php_app", "admin000", "patient_management");
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-
+<?php
 $result = mysqli_query($con, "SELECT * FROM Patient");
 while ($row = mysqli_fetch_array($result)) {
   echo "<tr>";

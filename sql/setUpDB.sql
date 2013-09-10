@@ -15,6 +15,7 @@ CREATE TABLE Patient (
   Diagnosis TINYTEXT
 );
 
+-- Patient has many Pains.
 CREATE TABLE Pain (
   PainID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   PatientID INT NOT NULL UNIQUE,
@@ -38,6 +39,7 @@ CREATE TABLE Pain (
   FOREIGN KEY (PatientID) REFERENCES Patient(PatientID)
 );
 
+-- Pain is treated by many Medicine.
 CREATE TABLE Medicine (
   MedicineID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   PainID INT NOT NULL,
@@ -65,4 +67,7 @@ CREATE TABLE PainManagement (
   FOREIGN KEY (PainID) REFERENCES Pain(PainID)
 );
 
--- Patient has many Pains. Pain is treated by many Medicine.
+CREATE TABLE Users (
+  UserID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  Email VARCHAR(50) NOT NULL
+);

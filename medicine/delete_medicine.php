@@ -1,10 +1,8 @@
 <?php
 /* url : /delete_medicine.php?MedicineID=n */
 
-$con=mysqli_connect("localhost", "php_app", "admin000", "patient_management");
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MYSQL: " . mysqli_connect_error();
-}
+require '../lib/login_check.php';
+require '../lib/mysql_connect.php';
 
 $id = $_GET['MedicineID'];
 if (empty($id))

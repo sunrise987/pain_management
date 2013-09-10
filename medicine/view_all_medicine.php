@@ -1,25 +1,18 @@
 <?php
 /* url : /view_all_medicine.php?PainID=n */
+require '../lib/login_check.php';
+require '../lib/mysql_connect.php';
+?>
 
-echo "
 <html>
   <head>
     <link href='../style.css' rel='stylesheet' type='text/css'>
   </head>
+  <body>
     <div>
-";
-
-$con=mysqli_connect("localhost", "php_app", "admin000", "patient_management");
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-
-include 'view_all_medicine_body.php';
-
-mysqli_close($con);
-echo "
+      <?php include 'view_all_medicine_body.php'; ?>
     </div>
   </body>
 </html>
-";
-?>
+
+<?php mysqli_close($con); ?>

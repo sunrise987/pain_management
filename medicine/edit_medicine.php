@@ -10,12 +10,10 @@
  * 1. PainID is not valid.
  */
 
+require '../lib/login_check.php';
+require '../lib/mysql_connect.php';
 require '../lib/date.php';
 
-$con=mysqli_connect("localhost", "php_app", "admin000", "patient_management");
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
 $id = $_GET['MedicineID'];
 
 $result = mysqli_query($con, "SELECT * FROM Medicine WHERE MedicineID = $id");

@@ -21,8 +21,7 @@ INSERT INTO Pain (
   AtThisMoment,
   CharacterOfPain,
   Radiation,
-  TypeOfPain,
-  MedicationPlan
+  TypeOfPain
 ) VALUES (
   "1",
   "1",
@@ -32,8 +31,7 @@ INSERT INTO Pain (
   "Better",
   "Shooting",
   b'1',
-  "Mixed",
-  "plan: blah bleh bloh"
+  "Mixed"
 );
 
 INSERT INTO Medicine VALUES (
@@ -59,4 +57,15 @@ INSERT INTO PainManagement VALUES (
   "info about another med",
   "Anxiety",
   "blah blah"
+);
+
+
+INSERT INTO Users VALUES (
+  "1",
+  "kafi60@gmail.com"
+);
+
+INSERT INTO Users VALUES (
+  "2",
+  "sunrise987@gmail.com"
 );

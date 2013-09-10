@@ -7,12 +7,9 @@
  *   (Not sure this is necessary. Ask for feedback from client.)
  */
 
+require '../lib/login_check.php';
+require '../lib/mysql_connect.php';
 require '../lib/generate_options.php';
-
-$con=mysqli_connect("localhost", "php_app", "admin000", "patient_management");
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
 
 $id = $_GET['PainID'];
 $array = mysqli_query($con, "SELECT * FROM Pain WHERE PainID = $id");
@@ -155,5 +152,3 @@ echo "
 
 mysqli_close($con);
 ?>
-
-

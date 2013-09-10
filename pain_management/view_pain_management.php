@@ -2,10 +2,8 @@
 /* url : /view_pain_management.php?PainManagementID=n */
 /* TODO: handle invalid PainManagementID error. */
 
-$con=mysqli_connect("localhost", "php_app", "admin000", "patient_management");
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+require '../lib/login_check.php';
+require '../lib/mysql_connect.php';
 
 echo "
 <html>

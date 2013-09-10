@@ -1,18 +1,15 @@
 <?php
 /* url : /view_patient.php?PatientID=n */
 /* TODO: */
-
-$con=mysqli_connect("localhost","php_app","admin000","patient_management");
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+require '../lib/login_check.php';
+require '../lib/mysql_connect.php';
+require '../side_bar/patient_buttons.php';
 
 echo "
 <html>
   <head>
     <link href='../style.css' rel='stylesheet' type='text/css'>
   </head>";
-require '../side_bar/patient_buttons.php';
 
 $id = $_GET['PatientID'];
 $result = mysqli_query($con, "SELECT * FROM Patient where PatientID=$id");

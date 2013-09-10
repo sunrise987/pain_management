@@ -5,14 +5,12 @@
  *  2. DateOfAdmission can't be in future.
  *  */
 
+require '../lib/login_check.php';
+require '../lib/mysql_connect.php';
 require '../lib/country_list.php';
 require '../lib/generate_options.php';
 require '../lib/date.php';
 
-$con=mysqli_connect("localhost", "php_app", "admin000", "patient_management");
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
 $id = $_GET['PatientID'];
 
 $result = mysqli_query($con, "SELECT * FROM Patient WHERE PatientID = $id");
@@ -108,4 +106,6 @@ echo "
     </div>
   </body>
   </html>";
+
+mysqli_close($con);
 ?>

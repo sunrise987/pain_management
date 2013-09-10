@@ -1,9 +1,13 @@
 <?php
-$con=mysqli_connect("localhost","php_app","admin000","patient_management");
+require '../lib/mysql_connect.php';
+require '../lib/login_check.php';
 
-// Check connection
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+function IsChecked($chkname,$value) {
+  if(!empty($_POST[$chkname])) {
+    if (strcmp($_POST[$chkname], $value) == 0)
+      return true;
+  }
+  return false;
 }
 
 $intens = empty($_POST['intensity']) ?  0: $_POST['intensity'];
@@ -72,12 +76,4 @@ header('Location:view_pain.php?PainID=' .$id);
 die();
 
 mysqli_close($con);
-
-function IsChecked($chkname,$value) {
-  if(!empty($_POST[$chkname])) {
-    if (strcmp($_POST[$chkname], $value) == 0)
-      return true;
-  }
-  return false;
-}
 ?>
