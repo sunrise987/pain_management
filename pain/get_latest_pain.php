@@ -29,4 +29,7 @@ while ($row = mysqli_fetch_array($result)) {
 echo "<html><body><a>";
 echo $latest_pain_id;
 echo "</a></html></body>";
+
+
+mysqli_close($con);
 ?>

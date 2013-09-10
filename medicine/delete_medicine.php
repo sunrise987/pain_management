@@ -9,6 +9,7 @@ if (mysqli_connect_errno()) {
 $id = $_GET['MedicineID'];
 if (empty($id))
   echo "Error at delete, wrong ID.";
+
 else {
   $row = mysqli_fetch_array(mysqli_query($con, "
     SELECT PainID FROM Medicine WHERE MedicineID = $id"));

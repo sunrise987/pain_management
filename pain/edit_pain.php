@@ -153,9 +153,7 @@ echo "
   </html>
   ";
 
-/*
-
-*/
+mysqli_close($con);
 ?>
 
 

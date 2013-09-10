@@ -67,4 +67,7 @@ echo "
       </form>
     </div>
   </body>
-</html>";
+  </html>";
+
+mysqli_close($con);
+?>
