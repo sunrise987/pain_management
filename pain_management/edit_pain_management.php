@@ -16,7 +16,7 @@ else
     "Opioids" => "", "InfoOtherMed" => "", "SideEffects" => "", "Comments" => "");
 
 $top = array("Somatic", "Visceral", "Neuropathic", "Mixed");
-$sideeffects = array("Anxiety", "Confution", "Constipation", "Epigastric Distress", "Hallucination",
+$sideeffects = array("Anxiety", "Confusion", "Constipation", "Epigastric Distress", "Hallucination",
   "Increased sedation", "Motor Weakness", "Nausea", "pruritus", "Urinary Retention", "Vomiting");
 
 echo "

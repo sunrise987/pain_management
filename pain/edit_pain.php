@@ -17,6 +17,7 @@ $array = mysqli_query($con, "SELECT * FROM Pain WHERE PainID = $id");
 if ($array != false) {
   $row = mysqli_fetch_array($array);
   echo "We are editing.";
+  $editing = ture;
 
 } else {
   $row = array("LocationOfPain" => "", "Pattern" => "",
@@ -29,6 +30,7 @@ if ($array != false) {
   "PainAffectsSocialInteraction" => "",
   "Comments" => "");
   echo "We are inserting.";
+  $editing = false;
 }
 
 $character = array ("Shooting", "Pricking", "Throbbing",
@@ -127,13 +129,17 @@ echo "
         <li>
           <label>Further comments about the pain</label>
           <input type='text' name='comments'value='" . $row['Comments'] . "'>
-        </li>
+        </li>";
+         echo "
         <li><label>Plan </label>";
             include '../medicine/view_all_medicine_body.php';
-            echo "
+            if ($editing) {
+              echo "
             <input type='button' name='add_medicine' value='Add Medicine'
               onclick=\"location='../medicine/edit_medicine.php?PainID="
-              . $id . "&MedicineID='\">
+              . $id . "&MedicineID='\">";
+            }
+        echo "
         </li>
         <li>
             <input type='hidden' name='id'

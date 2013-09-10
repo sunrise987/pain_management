@@ -42,6 +42,9 @@ echo "<li><label>Indicate if pain affects</label>" . $row['PainAffectsSleep'] . 
 echo "<li><label>Further comments about the pain</label>" . $row['Comments'] . "</li>";
 echo "<li><label>Plan </label>";
 include '../medicine/view_all_medicine_body.php';
+echo "<input type='button' name='add_medicine' value='Add Medicine'
+  onclick=\"location='../medicine/edit_medicine.php?PainID="
+  . $id . "&MedicineID='\">";
 echo "</li></ul></div>";
 
 include '../pain_management/view_all_pain_managements_body.php';
