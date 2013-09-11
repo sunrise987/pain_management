@@ -9,7 +9,7 @@
   // Also, don't forget to remove the UNIQUE label at PatientID in Pain.
 
 require '../lib/mysql_connect.php';
-require '../lib/login_check.php';
+require '../lib/main_container_start.php';
 ?>
 
 <script language="javascript">
@@ -22,26 +22,22 @@ function checkDelete(id) {
 }
 </script>
 
-<html>
-  <head>
-    <link href='../style.css' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
-    <header><h2>list of patients</h2></header>
+  <div id='content_top'>
+    <h2>list of patients</h2>
     <div class='CSSTableGenerator'>
       <table>
         <tr>
 
-          <td class='name'>Name</td>
-          <td class='dob'>Date of Birth</td>
-          <td class='gender'>Gender</td>
-          <td class='nation'>Nationality</td>
-          <td class='doa'>Date of Admission</td>
-          <td class='med_his'>Medical History</td>
-          <td class='surg_his'>Surgical History</td>
-          <td class='diag'>Diagnosis</td>
-          <td class='view_button'>Pain Info</td>
-          <td class='view_edit_delete'></td>
+          <th class='name'>Name</td>
+          <th class='dob'>Date of Birth</td>
+          <th class='gender'>Gender</td>
+          <th class='nation'>Nationality</td>
+          <th class='doa'>Date of Admission</td>
+          <th class='med_his'>Medical History</td>
+          <th class='surg_his'>Surgical History</td>
+          <th class='diag'>Diagnosis</td>
+          <th class='view_button'>Pain Info</td>
+          <th class='view_edit_delete'></td>
         </tr>
 
 <?php
@@ -82,5 +78,6 @@ mysqli_close($con);
       </table>
     </div>
     <button type='button' onclick="location='edit_patient.php?PatientID='">Add Patient</button>
-  </body>
-</html>
+</div>
+
+<?php require '../lib/main_container_end.php'; ?>

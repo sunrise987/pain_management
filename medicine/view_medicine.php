@@ -2,32 +2,31 @@
 /* url : /view_medicine.php?MedicineID=n */
 /* TODO: handle invalid MedicineID error. */
 
-require '../lib/login_check.php';
+//require '../lib/login_check.php';
 require '../lib/mysql_connect.php';
+require '../lib/main_container_start.php';
 
-echo "
-<html>
-  <head>
-    <link href='../style.css' rel='stylesheet' type='text/css'>
-  </head>";
-require '../side_bar/medicine_buttons.php';
+//require '../side_bar/medicine_buttons.php';
 
 $id = $_GET['MedicineID'];
 $result = mysqli_query($con, "SELECT * FROM Medicine WHERE MedicineID = $id");
 $row = mysqli_fetch_array($result);
 
 echo "
-  <body>
-    <header><div>
-      <h2>Medicne Information</h2>
-      <input type='button' name='delete' value='Delete'
-        onclick=\"location='delete_medicine.php?MedicineID=" . $id . "'\">
-      <input type='button' name='edit' value='Edit'
+  <div id='content_top'>
+    <h2>Medicne Information</h2>
+    <div id='delete_edit_container'>
+      <div id='delete_edit_btns'>
+        <ul>
+      <li><input type='button' name='delete' value='Delete'
+        onclick=\"location='delete_medicine.php?MedicineID=" . $id . "'\"></li>
+      <li><input type='button' name='edit' value='Edit'
         onclick=\"location='edit_medicine.php?PainID=" . $row['PainID'] .
-        "&MedicineID=" . $id . "'\">
-    </div></header>
-    <div class='CSSTableGenerator'>
-      <ul class='info'>";
+        "&MedicineID=" . $id . "'\"></li>
+        </ul>
+      </div>
+    </div>
+    <ul class='info'>";
 
   echo "<li><label>Date Time</label>" . $row['DateTime'] . "</li>";
   echo "<li><label>Opioids</label>" . $row['Opioids'] . "</li>";
@@ -37,9 +36,11 @@ echo "
   echo "<li><label>Side Effects</label>" . $row['SideEffects'] . "</li>";
   echo "<li><label>Comments</label>" . $row['Comments'] . "</li>";
 
-mysqli_close($con);
-?>
+echo "
       </ul>
     </div>
-  </body>
-</html>
+";
+
+require '../lib/main_container_end.php';
+mysqli_close($con);
+?>

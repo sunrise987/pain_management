@@ -6,20 +6,21 @@ $array = mysqli_query($con, "
 $row = mysqli_fetch_array($array);
 
 echo "
-  <header><h2>Pain Management for " . $row['Name'] . "</h2></header>
+  <div id='content_top'>
+  <h2>Pain Management for " . $row['Name'] . "</h2>
     <div class=\"CSSTableGenerator\">
       <table>
         <tr>
 
-          <td class=\"datetime\">Date/Time</td>
-          <td class=\"lop\">Location of Pain</td>
-          <td class=\"top\">Type of Pain</td>
-          <td class=\"intensity\">Intensity</td>
-          <td class=\"opioids\">Opioids</td>
-          <td class=\"infoothermed\">Other Medications</td>
-          <td class=\"sideeffects\">Side Effects</td>
-          <td class=\"comments\">Comments</td>
-          <td class='view_edit_delete'></td>
+          <th class=\"datetime\">Date/Time</td>
+          <th class=\"lop\">Location of Pain</td>
+          <th class=\"top\">Type of Pain</td>
+          <th class=\"intensity\">Intensity</td>
+          <th class=\"opioids\">Opioids</td>
+          <th class=\"infoothermed\">Other Medications</td>
+          <th class=\"sideeffects\">Side Effects</td>
+          <th class=\"comments\">Comments</td>
+          <th class='view_edit_delete'></td>
         </tr>";
 
 $result = mysqli_query($con, "SELECT * FROM PainManagement where PainID = $painid");
@@ -48,6 +49,7 @@ while ($row = mysqli_fetch_array($result)) {
 }
 echo "
       </table>
+      </div>
     </div>";
 
 ?>

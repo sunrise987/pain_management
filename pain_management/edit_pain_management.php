@@ -1,7 +1,7 @@
 <?php
 /* url : edit_pain_management.php?PainManagementID=n&PainID=n */
 
-require '../lib/login_check.php';
+require '../lib/main_container_start.php';
 require '../lib/mysql_connect.php';
 require '../lib/date.php';
 require '../lib/generate_options.php';
@@ -20,12 +20,8 @@ $sideeffects = array("Anxiety", "Confusion", "Constipation", "Epigastric Distres
   "Increased sedation", "Motor Weakness", "Nausea", "pruritus", "Urinary Retention", "Vomiting");
 
 echo "
-<html>
-  <head>
-    <link href='../style.css' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
-    <header><h2>Pain Management</h2></header>
+  <div id='content_top'>
+    <h2>Pain Management</h2>
     <div id='Container'>
       <form action='process_edit_pain_management.php' method='post'>
 
@@ -64,8 +60,8 @@ echo "
 
       </form>
     </div>
-  </body>
-  </html>";
+    ";
 
+require '../lib/main_container_end.php';
 mysqli_close($con);
 ?>

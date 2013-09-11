@@ -36,6 +36,7 @@
 
 .CSSTableGenerator tr:last-child td:last-child {
   -moz-border-radius-bottomright:0px;
+  border-width:0px 0px 0px 0px;
   -webkit-border-bottom-right-radius:0px;
   border-bottom-right-radius:0px;
 }
@@ -83,9 +84,6 @@
 .CSSTableGenerator tr td:last-child {
   border-width:0px 0px 1px 0px;
 }
-.CSSTableGenerator tr:last-child td:last-child {
-  border-width:0px 0px 0px 0px;
-}
 .CSSTableGenerator tr:first-child td {
     background:-o-linear-gradient(bottom, #0057af 5%, #007fff 100%);  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #0057af), color-stop(1, #007fff) );
   background:-moz-linear-gradient( center top, #0057af 5%, #007fff 100% );
@@ -116,7 +114,7 @@
 
 body {
   margin:auto;
-  width:70%;
+  width:80%;
   background-color:#b0e0e0;
 }
 
@@ -147,24 +145,3 @@ header {
   border-bottom: 1px dotted #ccc;
 }
 
-.info {
-  padding: 0;
-}
-
-li select {
-  width: 10%;
-}
-
-li label {
-  padding: 6px 1% 9px 1%;
-  font-weight: bold;
-}
-
-li {
-  display: block;
-  padding: 6px 1% 9px 1%;
-  clear: both;
-  background-color: transparent;
-  position: relative;
-  -webkit-transition: background-color 350ms ease-out;
-}

@@ -6,8 +6,7 @@
  * - Allow user to save, edit or retrieve multiple values of 'CharacterOfPain'.
  *   (Not sure this is necessary. Ask for feedback from client.)
  */
-
-require '../lib/login_check.php';
+require '../lib/main_container_start.php';
 require '../lib/mysql_connect.php';
 require '../lib/generate_options.php';
 
@@ -16,8 +15,8 @@ $array = mysqli_query($con, "SELECT * FROM Pain WHERE PainID = $id");
 
 if ($array != false) {
   $row = mysqli_fetch_array($array);
-  echo "We are editing.";
-  $editing = ture;
+  //echo "We are editing.";
+  $editing = true;
 
 } else {
   $row = array("LocationOfPain" => "", "Pattern" => "",
@@ -43,16 +42,9 @@ function output_current_value($var) {
   if (strcmp($var, "1") == 0)
     echo " checked";
 }
-
 echo "
-<html>
-  <head>
-    <link href='../style.css' rel='stylesheet' type='text/css'>
-  </head>
-
-  <body>
-    <header><div><h2>Pain Information</h2><div></div></div></header>
-    <div id='Container'>
+<div id='content_top'>
+  <h2>Pain Information</h2>
     <form action='process_edit_pain.php' method='post'>
 
       <ul class='info'>
@@ -152,9 +144,8 @@ echo "
 
     </form>
     </div>
-  </body>
-  </html>
   ";
 
+require '../lib/main_container_end.php';
 mysqli_close($con);
 ?>

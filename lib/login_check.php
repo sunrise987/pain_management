@@ -7,9 +7,12 @@ if (isset($_SESSION['user_email'])) {
   $sql = "SELECT * FROM Users WHERE Email = \"$email\"";
   $result = mysqli_query($con, $sql);
   $row = mysqli_fetch_array($result);
-  $duration = (time() - $_SESSION['time']) / (60*60);
-  echo $duration;
-  require 'header.php';
+  $duration = number_format((time() - $_SESSION['time']) / (60*60), 1);
+
+  echo "<div class='user'>Logged in as ";
+  echo " " . $_SESSION['firstName'] . " ";
+  echo " since: ". $duration . " hrs.";
+  echo "<a id='logout' href='../lib/logout.php'>logout</a></div>";
 
   if (strcmp($email, $row['Email']) != 0 || $duration >= 6) {
     //User is invalid, redirect to login page.

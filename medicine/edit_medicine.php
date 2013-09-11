@@ -10,7 +10,8 @@
  * 1. PainID is not valid.
  */
 
-require '../lib/login_check.php';
+require '../lib/main_container_start.php';
+//require '../lib/login_check.php';
 require '../lib/mysql_connect.php';
 require '../lib/date.php';
 
@@ -23,13 +24,8 @@ else
   $row = array("DateTime" => "", "Opioids" => "", "Dose" => "", "Frequency" => "", "RouteOfAdmission" => "", "SideEffects" => "", "Comments" => "");
 
 echo "
-<html>
-  <head>
-    <link href='../style.css' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
-    <header><h2>Medicine Information</h2></header>
-    <div id='Container'>
+  <div id='content_top'>
+    <h2>Medicine Information</h2>
       <form action='process_edit_medicine.php' method='post'>
 
         <ul class='info'>
@@ -57,9 +53,8 @@ echo "
 
       </form>
     </div>
-  </body>
-  </html>
   ";
 
+require '../lib/main_container_end.php';
 mysqli_close($con);
 ?>

@@ -5,7 +5,7 @@
  *  2. DateOfAdmission can't be in future.
  *  */
 
-require '../lib/login_check.php';
+require '../lib/main_container_start.php';
 require '../lib/mysql_connect.php';
 require '../lib/country_list.php';
 require '../lib/generate_options.php';
@@ -37,75 +37,68 @@ if (strcmp($row['Name'], "") == 0) {
     $fname = $row['Name'];
     $lname = "";
 }
+?>
 
-echo "
-<html>
-  <head>
-    <link href='../style.css' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
-    <header><h2>Patient Information</h2><div></div></header>
-    <div id='Container'>
+    <div id='content_top'>
+      <h2>Patient </h2>
       <form action='process_edit_patient.php' method='post'>
 
         <ul class='info'>
-          <li><input type='hidden' name='id' value='" . $id . "'>
+          <li><input type='hidden' name='id' value='<?php echo $id ?>'>
           <li>
               <label>First Name</label>
-              <input type='text' name='fname' value='". $fname ."'>
+              <input type='text' name='fname' value='<?php echo $fname ?>'>
               <label>Last Name</label>
-              <input type='text' name='lname' value='". $lname ."'>
+              <input type='text' name='lname' value='<?php echo $lname ?>'>
           </li>
 
-          <li><label>Date Of Birth</label>";
+          <li><label>Date Of Birth</label>
+            <?php
             output_date_fields_with_name(
               date_parse($row['DateOfBirth']),
               'birth_year', 'birth_month', 'birth_day');
-
-            echo "
+            ?>
           </li>
+
           <li><label>Gender</label>
-              <input type='radio' name='gender' value='male'";
+              <input type='radio' name='gender' value='male'<?php
                 if (strcmp($row['Gender'], "male") == 0)
                   echo " checked";
-                echo "
-              >Male
-              <input type='radio' name='gender' value='female'";
-                if (strcmp($row['Gender'], "female") == 0)
-                  echo " checked";
-                echo "
-              >Female
+                ?>>Male
+              <input type='radio' name='gender' value='female'<?php
+  if (strcmp($row['Gender'], "female") == 0) {echo " checked";}?>>Female
           </li>
           <li><label>Nationality</label>
-              <select name='nationality'>";
-                  output_options_from_array($country_list, $row['Nationality']);
-                  echo "
+              <select name='nationality'>
+
+
+  <?php output_options_from_array($country_list, $row['Nationality']); ?>
               </select>
           </li>
 
-          <li><label>Date Of Admission</label>";
+          <li><label>Date Of Admission</label>
+            <?php
             output_date_fields_with_name(
               date_parse($row['DateOfAdmission']),
               'addm_year', 'addm_month', 'addm_day');
-
-            echo "
+            ?>
           </li>
           <li><label>Medical History</label>
-              <input type='text' value='". $row['PastMedicalHistory']."' name='pmh'>
+          <input type='text' value='<?php echo $row['PastMedicalHistory'] ?>' name='pmh'>
           </li>
           <li><label>Surgical History</label>
-              <input type='text' value='". $row['PastSurgicalHistory']."' name='psh'>
+              <input type='text' value='<?php echo $row['PastSurgicalHistory'] ?>' name='psh'>
           </li>
           <li><label>Diagnosis</label>
-              <input type='text' name='diagnosis' value='". $row['Diagnosis']."'>
+              <input type='text' name='diagnosis' value='<?php echo $row['Diagnosis'] ?>'>
           </li>
           <li><input type='submit'></li>
         </ul>
 
       </form>
     </div>
-  </body>
-  </html>";
 
+<?php
+require '../lib/main_container_end.php';
 mysqli_close($con);
 ?>
