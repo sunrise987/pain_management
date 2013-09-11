@@ -72,13 +72,7 @@ while ($row = mysqli_fetch_array($result)) {
     onclick=\"location='../patient/edit_patient.php?PatientID="
     . $id . "'\">";
 
-  $message = "Are you sure you want to delete this Patient? Subsequently all the records of pain, pain management and medicine for this patient will be deleted. ";
   echo "<input type='button' value='Delete'
-    onclick=\"return confirm('" . $message . "')\"
-    onclick=\"location='../patient/delete_patient.php?PatientID="
-    . $id . "'\">";
-
-  echo "<input type='button' value='newDelete'
     onclick=\"checkDelete('".$id."')\">";
 
   echo "</td></tr>";
