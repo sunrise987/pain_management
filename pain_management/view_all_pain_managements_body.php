@@ -6,7 +6,7 @@ $array = mysqli_query($con, "
 $row = mysqli_fetch_array($array);
 
 echo "
-  <div id='content_top'>
+  <div id='content_bottom'>
   <h2>Pain Management for " . $row['Name'] . "</h2>
     <div class=\"CSSTableGenerator\">
       <table>

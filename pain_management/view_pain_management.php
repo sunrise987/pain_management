@@ -4,7 +4,6 @@
 
 //require '../lib/login_check.php';
 require '../lib/mysql_connect.php';
-//require '../side_bar/pain_management_buttons.php';
 require '../lib/main_container_start.php';
 
 $id = $_GET['PainManagementID'];
@@ -40,6 +39,7 @@ echo "
     </div>
       ";
 
+require '../lib/side_bar/pain_management_buttons.php';
 require '../lib/main_container_end.php';
 mysqli_close($con);
 ?>

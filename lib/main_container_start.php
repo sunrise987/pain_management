@@ -17,8 +17,8 @@
       <div id="navigation">
         <ul>
           <li><a href="../patient/view_all_patients.php">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact us</a></li>
+          <li><a href="../content/about.php">About</a></li>
+          <li><a href="../content/contactus.php">Contact us</a></li>
         </ul>
       </div>
     </div>

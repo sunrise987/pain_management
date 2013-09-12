@@ -22,7 +22,7 @@ function checkDelete(id) {
 }
 </script>
 
-  <div id='content_top'>
+  <div id='content_bottom'>
     <h2>list of patients</h2>
     <div class='CSSTableGenerator'>
       <table>

@@ -46,14 +46,14 @@ $row_patient = mysqli_fetch_array(mysqli_query($con, "
   onclick="location='../medicine/edit_medicine.php?PainID=<?php echo $id ?>&MedicineID='">
 </li></ul>
 
-<?php include '../pain_management/view_all_pain_managements_body.php'; ?>
 
 <input type='button' value='Add Pain Management Entry'
   onclick="location='../pain_management/edit_pain_management.php?PainID=<?php echo $id
 ?>&PainManagementID='">
 </div>
-
 <?php
+require '../lib/side_bar/pain_buttons.php';
+include '../pain_management/view_all_pain_managements_body.php';
 require '../lib/main_container_end.php';
 mysqli_close($con);
 ?>

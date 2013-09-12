@@ -145,6 +145,18 @@
   float: left;
   //background-color: #ffffe9;
   //width: 1000px;
+  width: 660px;
+  padding: 20px;
+  //margin: 0 0 0 30px;
+  display: inline;
+}
+
+#content_bottom
+{
+  clear: left;
+  float: left;
+  //background-color: #ffffe9;
+  width: 900px;
   //width: 560px;
   padding: 20px;
   //margin: 0 0 0 30px;
@@ -159,7 +171,7 @@
   width: 240px;
   padding: 20px 0;
   margin: 0 20px 0 0;
-  display: inline;
+  display: table-column;
 }
 
 #aside h3 { margin: 0; }
@@ -180,11 +192,37 @@
   height: 1%;
 }
 
+/*
+table :not(.contactus) {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+// Zebra striping
+*:not(table.contactus) tbody tr:nth-of-type(odd) {
+  background: #eee;
+}
+
+*:not(.contactus) th {
+  background: #565639;
+  //#333;
+  color: white;
+  font-weight: bold;
+}
+
+*:not(.contactus) td, *:not(.contactus) th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+*/
+
 table {
   width: 100%;
   border-collapse: collapse;
 }
-/* Zebra striping */
+
+// Zebra striping
 tr:nth-of-type(odd) {
   background: #eee;
 }
@@ -195,9 +233,28 @@ th {
   color: white;
   font-weight: bold;
 }
+
 td, th {
   padding: 6px;
   border: 1px solid #ccc;
   text-align: left;
 }
 
+// Contact us page
+table.contactus {
+  width: auto;
+  border-collapse: separate;
+}
+
+table.contactus>th{
+  background: auto;
+  //#333;
+  color: auto;
+  font-weight: auto;
+}
+
+table.contactus>td, table.contactus>th {
+  padding: auto;
+  border: auto;
+  text-align: auto;
+}

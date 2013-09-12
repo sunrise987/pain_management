@@ -6,7 +6,6 @@
 require '../lib/mysql_connect.php';
 require '../lib/main_container_start.php';
 
-//require '../side_bar/medicine_buttons.php';
 
 $id = $_GET['MedicineID'];
 $result = mysqli_query($con, "SELECT * FROM Medicine WHERE MedicineID = $id");
@@ -41,6 +40,7 @@ echo "
     </div>
 ";
 
+require '../lib/side_bar/medicine_buttons.php';
 require '../lib/main_container_end.php';
 mysqli_close($con);
 ?>

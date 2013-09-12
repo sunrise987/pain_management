@@ -1,4 +1,5 @@
-<div id='side_bar'>
+<div id='aside'>
+  <h3> Navitation bar <h3>
   <table>
     <tr>
       <input type='button' name='all_patients' value='All Patients'

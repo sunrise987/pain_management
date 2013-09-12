@@ -1,14 +1,15 @@
 <?php
 
-$id = $_GET['PainManagementID'];
+$id = $_GET['MedicineID'];
 $row = mysqli_fetch_array(mysqli_query($con, "
-  SELECT PainManagement.PainID, Pain.PatientID
-  FROM PainManagement
-  JOIN Pain ON PainManagement.PainID
-  WHERE PainManagementID=$id"));
+  SELECT Medicine.PainID, Pain.PatientID
+  FROM Medicine
+  JOIN Pain ON Medicine.PainID
+  WHERE MedicineID=$id"));
 
 echo "
-<div id='side_bar'>
+<div id='aside'>
+  <h3> navitation <h3>
   <table>
     <tr>
       <input type='button' name='all_patients' value='All Patients'

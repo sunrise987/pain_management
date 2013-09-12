@@ -39,9 +39,10 @@ $row = mysqli_fetch_array($result);
       </ul>
       <input type='button' value='Add Pain Information'
       onclick="location='../pain/edit_pain.php?PatientID=<?php echo $id?>&PainID='">
-
-      <?php include "../pain/view_all_pain_body.php"; ?>
     </div>
-
-<?php require '../lib/main_container_end.php'; ?>
-<?php mysqli_close($con); ?>
+<?php
+require '../lib/side_bar/patient_buttons.php';
+include "../pain/view_all_pain_body.php";
+require '../lib/main_container_end.php';
+mysqli_close($con);
+?>

@@ -1,0 +1,25 @@
+body {
+  font-size: 17px;
+  color: #641464;
+  font-family: Verdana;
+  font-weight: bold;
+  letter-spacing: 0.25em;
+  word-spacing: 0.25em;
+  line-spacing: 1.5em;
+  text-align: center;
+}
+
+h2 {
+  margin: 30px;
+  padding: 15px;
+  border-style: dotted;
+  border-width: 5px;
+  border-left-width: 3px;
+  border-color: #818181;
+  font-weight: bold;
+  color: #FFAA00;
+  background-color: #00777F;
+  font-size: 25px;
+  font-family: Verdana;
+
+}

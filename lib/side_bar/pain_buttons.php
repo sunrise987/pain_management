@@ -4,7 +4,8 @@ $id = $_GET['PainID'];
 $row = mysqli_fetch_array(mysqli_query($con, "SELECT PatientID FROM Pain where PainID=$id"));
 
 echo "
-<div id='side_bar'>
+<div id='aside'>
+  <h3> Navitation bar<h3>
   <table>
     <tr>
       <input type='button' name='all_patients' value='All Patients'

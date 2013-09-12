@@ -7,7 +7,7 @@ $row = mysqli_fetch_array(mysqli_query($con, "
   SELECT Name FROM Patient WHERE PatientID = $patientid"));
 ?>
 
-  <div id='content_top'>
+  <div id='content_bottom'>
     <h2>Pain Information for <?php echo $row['Name']?></h2>
     <div class='CSSTableGenerator'>
       <table>
