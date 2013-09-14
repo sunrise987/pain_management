@@ -1,9 +1,7 @@
 <div id='aside'>
-  <h3> Navitation bar <h3>
-  <table>
-    <tr>
-      <input type='button' name='all_patients' value='All Patients'
-        onclick="location='../patient/view_all_patients.php'">
-    </tr>
-  </table>
+  <ul>
+    <li>
+      <a href='../patient/view_all_patients.php'>All Patients</a>
+    </li>
+  </ul>
 </div>

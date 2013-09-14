@@ -1,8 +1,3 @@
-<?php
-$id = $_GET['PainID'];
-$row = mysqli_fetch_array(mysqli_query($con, "SELECT PatientID FROM Pain where PainID=$id"));
-?>
-
 <div id='aside'>
   <ul>
     <li>
@@ -11,6 +6,9 @@ $row = mysqli_fetch_array(mysqli_query($con, "SELECT PatientID FROM Pain where P
     <li>
      <a href='../patient/view_patient.php?PatientID=<?php
       echo $row['PatientID'] ?>'>Back to patient</a>
+    </li>
+    <li>
+    <a href='../pain/view_pain.php?PainID=<?php echo $row['PainID'] ?>'>Back to Pain Info</a>
     </li>
   </ul>
 </div>

@@ -21,7 +21,7 @@ try {
         echo 'User has canceled authentication!';
     } else {
         echo 'User ' . ($openid->validate() ? $openid->identity . ' has ' : 'has not ') . 'logged in.';
-        print_r($openid->getAttributes());
+	print_r($openid->getAttributes());
     }
 } catch(ErrorException $e) {
     echo $e->getMessage();

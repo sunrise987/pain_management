@@ -163,15 +163,36 @@
   display: inline;
 }
 
+#top {
+  height: 400px;
+}
+
 #content_top h2 { margin: 0; }
 
 #aside
 {
   float: right;
-  width: 240px;
-  padding: 20px 0;
+  //width: 240px;
+  //padding: 20px 0;
   margin: 0 20px 0 0;
-  display: table-column;
+  display: block;
+  //height: 100%;
+  //background-color: #f0f0e9;
+}
+
+#aside ul{
+  display: box;
+  list-style-type: none;
+  background-color: black;
+}
+
+#aside ul li a {
+  display: block;
+  float: left;
+  padding: 5px 10px;
+  color: #000;
+  text-decoration: italic;
+  border: 1px solid #000;
 }
 
 #aside h3 { margin: 0; }
