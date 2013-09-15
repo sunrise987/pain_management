@@ -7,7 +7,7 @@
     <div id="head-container">
       <div id="header">
         <h1>
-          Anesthetics Team at Hamad Hospital
+          HMC - Pain Management Team
         </h1>
           <?php require '../lib/login_check.php'; ?>
       </div>
@@ -18,7 +18,8 @@
         <ul>
           <li><a href="../patient/view_all_patients.php">Home</a></li>
           <li><a href="../content/about.php">About</a></li>
-          <li><a href="../content/contactus.php">Contact us</a></li>
+          <!--<li><a href="../content/contactus.php">Contact us</a></li>-->
+          <li><a href="../user/view_all_users.php">Team</a></li>
         </ul>
       </div>
     </div>
