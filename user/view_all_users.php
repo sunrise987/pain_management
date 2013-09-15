@@ -26,7 +26,7 @@ mysqli_close($con);
 ?>
       </table>
     </div>
-    <input type='button' value='Add User' onclick="location='edit_user.php?UserID='">
+    <button type='button' class='add' onclick="location='edit_user.php?UserID='">Add User</button>
 </div>
 
 <?php require '../lib/main_container_end.php'; ?>
