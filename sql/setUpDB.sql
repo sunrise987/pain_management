@@ -1,5 +1,5 @@
-DROP DATABASE Patient_Management;
-create database patient_management;
+DROP database patient_management;
+CREATE database patient_management;
 use patient_management;
 set session time_zone = '+3:00';
 

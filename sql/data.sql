@@ -62,10 +62,15 @@ INSERT INTO PainManagement VALUES (
 
 INSERT INTO Users VALUES (
   "1",
-  "kafi60@gmail.com"
+  "dr.kafi@gmail.com"
 );
 
 INSERT INTO Users VALUES (
   "2",
   "sunrise987@gmail.com"
+);
+
+INSERT INTO Users VALUES (
+  "3",
+  "putera.afandy@gmail.com"
 );

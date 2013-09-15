@@ -2,6 +2,7 @@
 # Logging in with Google accounts requires setting special identity, so this example shows how to do it.
 require '../lib/globals.php';
 require '../lightopenid-lightopenid/openid.php';
+echo $hostname;
 try {
     $openid = new LightOpenID($hostname);
     if(!$openid->mode) {
