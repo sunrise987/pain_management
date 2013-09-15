@@ -213,32 +213,8 @@
   height: 1%;
 }
 
-/*
-table :not(.contactus) {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-// Zebra striping
-*:not(table.contactus) tbody tr:nth-of-type(odd) {
-  background: #eee;
-}
-
-*:not(.contactus) th {
-  background: #565639;
-  //#333;
-  color: white;
-  font-weight: bold;
-}
-
-*:not(.contactus) td, *:not(.contactus) th {
-  padding: 6px;
-  border: 1px solid #ccc;
-  text-align: left;
-}
-*/
-
 table {
+  max-width: 900px;
   width: 100%;
   border-collapse: collapse;
 }
@@ -246,6 +222,12 @@ table {
 // Zebra striping
 tr:nth-of-type(odd) {
   background: #eee;
+}
+
+tr {
+  max-width: 900px;
+  max-height: 5px;
+  overflow: hidden;
 }
 
 th {
@@ -256,26 +238,14 @@ th {
 }
 
 td, th {
+  max-width: 50px;
+  max-height: 5px;
+  width: auto;
   padding: 6px;
   border: 1px solid #ccc;
   text-align: left;
 }
 
-// Contact us page
-table.contactus {
-  width: auto;
-  border-collapse: separate;
-}
-
-table.contactus>th{
-  background: auto;
-  //#333;
-  color: auto;
-  font-weight: auto;
-}
-
-table.contactus>td, table.contactus>th {
-  padding: auto;
-  border: auto;
-  text-align: auto;
+.view_edit_delete {
+  min-width: 60;
 }

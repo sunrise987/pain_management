@@ -33,7 +33,7 @@ while ($row = mysqli_fetch_array($result)) {
   echo "<td>" . $row['Opioids'] . "</td>";
   echo "<td>" . $row['InfoOtherMed'] . "</td>";
   echo "<td>" . $row['SideEffects'] . "</td>";
-  echo "<td>" . $row['Comments'] . "</td></tr>";
+  echo "<td>" . $row['Comments'] . "</td>";
 
   echo "<td><input type='button' value='View'
     onclick=\"location='../pain_management/view_pain_management.php?PainManagementID="

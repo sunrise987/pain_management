@@ -24,6 +24,8 @@ $row = mysqli_fetch_array(mysqli_query($con, "
           <th class='comments'>Comments</td>
           <th class='plan'>Plan</td>
           <th class='view_edit_delete'></td>
+      </tr>
+
 <?php
 $result = mysqli_query($con, "
   SELECT * FROM Pain WHERE PatientID= $patientid");
