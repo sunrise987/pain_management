@@ -34,7 +34,6 @@ SET
   CharacterOther='{$_POST['other']}',
   Radiation='$radiation',
   TypeOfPain='{$_POST['tp']}',
-  Mixed='{$_POST['mixed']}',
   WhatRelievesPain='{$_POST['relieve']}',
   WhatIncreasesPain='{$_POST['cause']}',
   PainAffectsSleep='$sleep',
@@ -59,7 +58,7 @@ if (empty($id)) {
       '{$_POST['patientid']}', '{$_POST['lop']}', '{$_POST['pattern']}',
       '$intens', '{$_POST['atmoment']}', '{$_POST['character']}',
       '{$_POST['other']}', $radiation,
-      '{$_POST['tp']}', '{$_POST['mixed']}',
+      '{$_POST['tp']}',
       '{$_POST['relieve']}','{$_POST['cause']}', $sleep, $mood, $activity,
       $nutrition, $social, '{$_POST['comments']}'
     )";

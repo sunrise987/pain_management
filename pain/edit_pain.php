@@ -22,7 +22,7 @@ if ($array != false) {
   $row = array("LocationOfPain" => "", "Pattern" => "",
   "Intensity" => "", "AtThisMoment" => "", "CharacterOfPain" => "",
   "CharacterOther" => "", "Radiation" => "",
-  "TypeOfPain" => "", "Mixed" => "",
+  "TypeOfPain" => "",
   "WhatRelievesPain" => "", "WhatIncreasesPain" => "",
   "PainAffectsSleep" => "", "PainAffectsMood" => "",
   "PainAffectsActivity" => "", "PainAffectsNutrition" => "",
@@ -85,7 +85,6 @@ echo "
           output_options_from_array($tp, $row['TypeOfPain']);
           echo "
           </select>
-          <label>Mixed</label><input type='text' name='mixed' value='" . $row['Mixed'] . "'>
           <input type='checkbox' name='radiation[]' value='1'";
             output_current_value($row['Radiation']);
             echo "

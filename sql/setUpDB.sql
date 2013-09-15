@@ -27,7 +27,6 @@ CREATE TABLE Pain (
   CharacterOther TINYTEXT,
   Radiation TINYINT(1),
   TypeOfPain ENUM ('Somatic', 'Visceral', 'Neuropathic', 'Mixed'),
-  Mixed TINYTEXT,
   WhatRelievesPain TINYTEXT,
   WhatIncreasesPain TINYTEXT,
   PainAffectsSleep TINYINT(1),
