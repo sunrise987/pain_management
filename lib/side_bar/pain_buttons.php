@@ -4,6 +4,8 @@ $row = mysqli_fetch_array(mysqli_query($con, "SELECT PatientID FROM Pain where P
 ?>
 
 <div id='aside'>
+  <li>
+  <h4>LINKS</h4>
   <ul>
     <li>
       <a href='../patient/view_all_patients.php'>All Patients</a>
