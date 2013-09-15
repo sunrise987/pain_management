@@ -37,8 +37,7 @@ $row = mysqli_fetch_array($result);
         <li><label>Diagnosis</label><?php echo $row['Diagnosis'] ?></li>
 
       </ul>
-      <input type='button' value='Add Pain Information'
-      onclick="location='../pain/edit_pain.php?PatientID=<?php echo $id?>&PainID='">
+
     </div>
 <?php
 require '../lib/side_bar/patient_buttons.php';

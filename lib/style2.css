@@ -75,13 +75,14 @@
 
 #delete_edit_btns li input
 {
+  width: 50px;
   display: block;
   float: right;
   margin: 5px;
   padding: 5px 10px;
-  color: #000;
-  text-decoration: none;
-  border-right: 1px solid #000;
+//color: #000;
+//text-decoration: none;
+//border-right: 1px solid #000;
 }
 
 #logout {
@@ -136,6 +137,7 @@
 {
   float: left;
   width: 1000px;
+  min-height: 1000px;
   background: #FFF url(two-fixed-background.gif) repeat-y 100% 0;
 }
 
@@ -248,4 +250,9 @@ td, th {
 
 .view_edit_delete {
   min-width: 60;
+}
+
+button.add {
+  margin-top: 20px;
+  padding: 10px;
 }

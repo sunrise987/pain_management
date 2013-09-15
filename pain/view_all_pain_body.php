@@ -67,4 +67,6 @@ while ($row = mysqli_fetch_array($result)) {
 ?>
     </table>
     </div>
+    <button class='add' type='button'
+      onclick="location='../pain/edit_pain.php?PatientID=<?php echo $patientid?>&PainID='">Add Pain Information</button>
   </div>

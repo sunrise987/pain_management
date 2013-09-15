@@ -47,9 +47,12 @@ while ($row = mysqli_fetch_array($result)) {
   echo "</tr>";
 
 }
-echo "
-      </table>
-      </div>
-    </div>";
-
 ?>
+    </table>
+  </div>
+  <button type='button' class='add'
+  onclick="location='../pain_management/edit_pain_management.php?PainID=<?php echo $id ?>&PainManagementID='">Add Pain Management Entry</button>
+</div>
+
+
+<?php mysqli_close($con); ?>

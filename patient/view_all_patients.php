@@ -77,7 +77,7 @@ mysqli_close($con);
 ?>
       </table>
     </div>
-    <button type='button' onclick="location='edit_patient.php?PatientID='">Add Patient</button>
+    <button class='add' type='button' onclick="location='edit_patient.php?PatientID='">Add Patient</button>
 </div>
 
 <?php require '../lib/main_container_end.php'; ?>

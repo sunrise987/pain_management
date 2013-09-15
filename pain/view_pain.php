@@ -15,7 +15,7 @@ $row_patient = mysqli_fetch_array(mysqli_query($con, "
 ?>
 
   <div id="content_top">
-    <h2>Pain Information for<?php echo $row_patient['Name'] ?></h2>
+    <h2>Pain Information for <?php echo $row_patient['Name'] ?></h2>
     <div id="delete_edit_container">
       <div id="delete_edit_btns">
         <ul>
@@ -47,9 +47,6 @@ $row_patient = mysqli_fetch_array(mysqli_query($con, "
 </li></ul>
 
 
-<input type='button' value='Add Pain Management Entry'
-  onclick="location='../pain_management/edit_pain_management.php?PainID=<?php echo $id
-?>&PainManagementID='">
 </div>
 <?php
 require '../lib/side_bar/pain_buttons.php';
